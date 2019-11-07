@@ -7,7 +7,7 @@
 ##### Adam Tiago:
 ##### Benjamin Brennan:
 ##### Joe Maguire:
-##### Elise Symmes:
+##### [Elise Symmes](/team/eliseSymmes.md)
 
 ### Overview:
 
