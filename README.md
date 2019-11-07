@@ -4,10 +4,10 @@
 
 ### Team Member Markdowns:
 
-##### Adam Tiago
-##### Benjamin Brennan
-##### Joe Maguire
-##### [Elise Symmes](/team/eliseSymmes.md)
+##### - Adam Tiago
+##### - Benjamin Brennan
+##### - Joe Maguire
+##### - [Elise Symmes](/team/eliseSymmes.md)
 
 ### Overview:
 
