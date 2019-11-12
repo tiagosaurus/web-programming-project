@@ -5,7 +5,7 @@
 ### Team Member Markdowns:
 
 ##### - Adam Tiago
-##### - Benjamin Brennan
+##### - [Benjamin Brennan](/team/benBrennan.md)
 ##### - Joe Maguire
 ##### - [Elise Symmes](/team/eliseSymmes.md)
 
