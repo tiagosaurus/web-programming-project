@@ -10,7 +10,7 @@
 ##### - [Elise Symmes](/team/eliseSymmes.md)
 
 ### Overview:
-Travel Guide  - Travel Guide - provide users with the ability to select a country/area and provide information with what is going on in specified area.
+Travel Guide - provide users with the ability to select a country/area and provide information with what is going on in specified area.
 
 ### Integrative Experience:
 Encourages people to travel and learn more about other cultures/countries.
