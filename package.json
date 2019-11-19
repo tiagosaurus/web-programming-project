@@ -2,6 +2,7 @@
   "name": "web-programming-testing",
   "version": "1.0.0",
   "dependencies": {
+    "gulp-cli": "^2.2.0",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1"
   },
