@@ -436,6 +436,10 @@ img {
 .svg {
     width: 6rem;
     height: 6rem;
+    position: absolute;
+    z-index: 2;
+    left: 1rem;
+    top: 3.5rem;
 }
 
 .btn {
@@ -920,13 +924,32 @@ img {
         display: block;
         margin: 0 auto;
     }
-.navbar {
-  color: #FFF;
-  text-decoration: none;
-  padding: 0.75rem 1.2rem;
-  display: inline-block;
-}
-nav {
-  width: 100%;
-  background-color: blue;
-}
+
+.navbar__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #36558f;
+    }
+
+.navbar__li {
+        float: left;
+    }
+
+.navbar__li{
+        display: inline;
+        color: white;
+        text-decoration: none;
+        padding: 14px 16px;
+        background-color: #36558f;
+        width: 16.667%;
+    }
+
+.navbar__li a{
+        color: white;
+        text-decoration: none;
+    }
+
+.navbar__li a:hover {
+        background-color: #111;
+    }

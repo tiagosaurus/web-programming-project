@@ -1,0 +1,26 @@
+.navbar{
+    &__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: $defaultBlue;
+    }
+    &__li {
+        float: left;
+    }
+    &__li{
+        display: inline;
+        color: white;
+        text-decoration: none;
+        padding: 14px 16px;
+        background-color: $defaultBlue;
+        width: 16.667%;
+    }
+    &__li a{
+        color: white;
+        text-decoration: none;
+    }
+    &__li a:hover {
+        background-color: #111;
+    }
+}
