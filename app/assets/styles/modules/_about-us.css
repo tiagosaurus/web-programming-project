@@ -1,0 +1,42 @@
+.about-us {
+    background-color: rgba(208, 227, 204, .8);
+    padding: 0 2.25rem 1px 1.125rem;
+    margin-bottom: 98px;
+
+    @mixin atMedium {
+        padding: 0 1.8125rem 1px 1.8125rem;
+        margin-bottom: 0;
+    }
+
+    &__picture {
+        margin: 0 auto -80px auto;
+        border: 8px solid rgba(208, 227, 204, .8);
+        position: relative;
+        border-radius: 80px;
+        overflow: hidden;
+        width: 160px;
+        height: 160px;
+        top: -80px;
+    }
+
+    &__title {
+        color: $defaultBlue;
+        margin: 0;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        color: $defaultBrown;
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.9rem;
+        margin: 0.25rem 0 1rem 0;
+    }
+
+    &--last {
+        margin-bottom: 0;
+    }
+
+}

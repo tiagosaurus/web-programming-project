@@ -1,0 +1,36 @@
+.page-section {
+    padding: 1.2rem 0;
+
+    @mixin atMedium {
+        padding: 4.5rem 0;
+    }
+    
+    &--blue {
+        background-color: $defaultBlue;
+        color: #FFF;
+    }
+
+    &--about-us {
+        background-color: #a2c7e5;
+
+        @mixin atLarge {
+            background: url('/assets/images/background-test-opacity.gif') top center no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &--no-b-padding-med {
+        padding-bottom: 0;
+
+        @mixin atMedium {
+            padding-bottom: 4.5rem;
+        }
+    }
+    &--no-b-padding-lg {
+        padding-bottom: 0;
+
+        @mixin atLarge {
+            padding-bottom: 4.5rem;
+        }
+    }
+}

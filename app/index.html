@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href='https://fonts.googleapis.com/css?family=Cantarell:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <title>What's Happening Where I'm Going?</title>
+  <meta name="keywords" content="Foreign news, Trending Topics, Travel Weather">
+  <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
+
+  <link rel="stylesheet" href="temp/styles/styles.css">
+
+</head>
+
+<body>
+  <header>
+    <img src="assets/images/icons/globe.svg" class="svg">
+    <a href="#" class="btn">Contact Us</a>
+    <nav>
+      <ul>
+        <li><a href="#where-to-visit">Where to Visit?</a></li>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#about-us">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="world-map">
+    <picture>
+      <source srcset="assets/images/world-map--large.png 1920w, 
+        assets/images/world-map--large-hi-dpi.png 3840w" media="(min-width: 1380px">
+      <source srcset="assets/images/world-map--medium.png 1380w, 
+        assets/images/world-map--medium-hi-dpi.png 2760w" media="(min-width: 990px">
+      <source srcset="assets/images/world-map--small.png 992w,
+        assets/images/world-map--small-hi-dpi.png 1984w" media="(min-width: 640px">
+      <img srcset="assets/images/world-map--smaller.png 640w, 
+        assets/images/world-map--smaller-hi-dpi.png 1280w" alt="World Map" class="world-map__image">
+    </picture>
+
+
+    <div class="world-map__text-content">
+      <div class="wrapper">
+        <h1 class="world-map__title">Travel Abroad</h1>
+        <h2 class="world-map__subtitle">What's currently happening where you're traveling?</h2>
+        <p class="world-map__description">We're here to help you figure out what's happening.</p>
+        <div class="world-map__dropdown">
+          <select>
+            <option value="select-a-country">Select a Country</option>
+            <option value="belgium">Belgium</option>
+            <option value="france">France</option>
+            <option value="germany">Germany</option>
+            <option value="portugal">Portugal</option>
+          </select>
+        </div>
+        <!--<p><a href="#" class="btn btn--brown btn--large">Place/Countries</a></p>-->
+      </div>
+    </div>
+  </div>
+
+  <div id="traveling" class="page-section">
+
+    <div class="wrapper">
+      <h2 class="headline headline--center headline--bot-margin-sm">Traveling is full of challenges...</h2>
+      <h3 class="headline headline-- headline--brown headline--small headline--narrow headline--bot-margin-lg">But
+        there's already sites for that. We're here to help you stay up to date with what's happening where you're
+        traveling.</h3>
+    
+      <div class="row__medium-4 row--gutters-small wrapper--countries">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+      </div>
+
+      <div class="row__medium-4 row--gutters-small wrapper--countries">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+      </div>
+      
+      <div class="row__medium-4 row--gutters-small wrapper--countries">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+        <img src="assets/images/placeholder-country.png" alt="placeholder country">
+      </div>
+
+      <h2 class="headline">Something something.</h2>
+      <p>Our uninteresting overtone samples another concern. Each changeover fails. Past the sufferer rots the close
+        paranoia. The muscle originates! </p>
+      <p>The educational flute reasons inside her mixed shame. A tourist war generalizes a spectacular. The verbal rope
+        fiddles a contrary bookshop. An increased anarchy transports the truth after a nastiest cynic.</p>
+      <p> A demise worships the each cabinet throughout an opinion. A horde conceals the advance. The terrifying verse
+        winds the weekday. The calculus enforces the fountain. The imposed stack discriminates. </p>
+    </div>
+  </div>
+
+  <div id="what-we-do" class="page-section page-section--blue">
+    <div class="wrapper">
+      <h2 class="section-title"><img src="assets/images/icons/airplane.svg" class="svg section-title__icon">What We Do
+      </h2>
+      <div class="row row--gutters-large generic-content-container">
+        <div class="row__medium-6">
+
+          <div class="feature-item">
+            <img class="section-title__icon svg" src="assets/images/icons/suitcase.svg" class="svg">
+            <h3 class="feature-item__title">Travel Information</h3>
+            <p>We'll let you know some information about the country you're visiting - what currency you'll need, the
+              languages spoken, etc.</p>
+          </div>
+
+          <div class="feature-item">
+            <img class="section-title__icon svg" src="assets/images/icons/trending.svg" class="svg">
+            <h3 class="feature-item__title">What's Trending</h3>
+            <p>You know what's happening here - but what's happened abroad at your travel destination? Stay updated.</p>
+          </div>
+        </div>
+
+        <div class="row__medium-6">
+          <div class="feature-item">
+            <img class="section-title__icon svg" src="assets/images/icons/cloud.svg" class="svg">
+            <h3 class="feature-item__title">Weather</h3>
+            <p>We'll let you know some information about the country you're visiting - what currency you'll need, the
+              languages spoken, etc.</p>
+          </div>
+
+          <div class="feature-item">
+            <img class="section-title__icon svg" src="assets/images/icons/text-lines.svg">
+            <h3 class="feature-item__title">Current News</h3>
+            <p>You know what's happening here - but what's happened abroad at your travel destination? Stay updated.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="about-us" class="page-section page-section--about-us page-section--no-b-padding-lg">
+    <div class="wrapper wrapper--no-padding-until-lg">
+      <h2 class="section-title section-title--blue"><img class="section-title__icon svg"
+          src="assets/images/icons/multiple-users-silhouette.svg">About Us</h2>
+
+      <div class="row row--gutters row--t-padding row--gutters-small row--equal-height-at-lg generic-content-container">
+        <div class="row__large-3">
+          <div class="about-us">
+            <div class="about-us__picture">
+              <img src="assets/images/placeholder-3.png">
+            </div>
+            <h3 class="about-us__title">Adam</h3>
+            <h3 class="about-us__subtitle">Something Something</h3>
+            <p>What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+            </p>
+            </p>
+          </div>
+        </div>
+
+        <div class="row__large-3">
+          <div class="about-us">
+            <div class="about-us__picture">
+              <img src="assets/images/placeholder-3.png">
+            </div>
+            <h3 class="about-us__title">Elise</h3>
+            <h3 class="about-us__subtitle">Something Something</h3>
+            <p>What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+            </p>
+          </div>
+        </div>
+
+        <div class="row__large-3">
+          <div class="about-us">
+            <div class="about-us__picture">
+              <img src="assets/images/placeholder-3.png">
+            </div>
+            <h3 class="about-us__title">Joe</h3>
+            <h3 class="about-us__subtitle">Something Something</h3>
+            <p>What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+            </p>
+          </div>
+        </div>
+
+        <div class="row__large-3">
+          <div class="about-us about-us--last">
+            <div class="about-us__picture">
+              <img src="assets/images/placeholder-3.png">
+            </div>
+            <h3 class="about-us__title">Ben</h3>
+            <h3 class="about-us__subtitle">Something Something</h3>
+            <p>What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="#" class="btn btn--brown">Contact Us</a></p>
+  </footer>
+</body>
+
+</html>
