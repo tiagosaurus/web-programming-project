@@ -67,8 +67,13 @@
         img {
             padding-left: 10px;
         }
+    }
 
-
+    &__country-links {
+        opacity: 0.5;
+    }
+    &__country-links:hover {
+        opacity: 1.0;
     }
 }
 

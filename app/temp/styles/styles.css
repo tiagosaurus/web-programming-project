@@ -440,13 +440,19 @@ img {
         margin-right: auto;
         width: 60%;
         padding: 0px 0px 0px 10px;
-
-
     }
 
 .world-map__images img {
             padding-left: 10px;
         }
+
+.world-map__country-links {
+        opacity: 0.5;
+    }
+
+.world-map__country-links:hover {
+        opacity: 1.0;
+    }
 
 .svg {
     width: 6rem;
