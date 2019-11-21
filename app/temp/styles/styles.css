@@ -380,6 +380,7 @@ img {
         left: 0;
         width: 100%;
         text-align: center;
+        padding-top: 20px;
     }
 
 .world-map__title {
@@ -929,13 +930,46 @@ img {
 
     position: absolute;
     z-index: 2;
-    background-color: rgba(54, 85, 143, 0.5);
     width: 100%;
     padding: 10px 0;
 }
 
+@media (min-width: 800px) {
+
+.navbar {
+        background-color: rgba(54, 85, 143, 0.5)
+}
+    }
+
 .navbar__btn-container {
         float: right;
+    }
+
+.navbar__menu {
+        display: none;
+    }
+
+@media (min-width: 800px) {
+
+.navbar__menu {
+            display: block
+    }
+    }
+
+.navbar__menu-icon {
+        width: 20px;
+        height: 20px;
+        background-color: #FFF;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+@media (min-width: 800px) {
+
+.navbar__menu-icon {
+            display: none
+    }
     }
 
 .links {
