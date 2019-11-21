@@ -953,3 +953,24 @@ img {
 .navbar__li a:hover {
         background-color: #111;
     }
+
+.footer {
+    background-color: #36558f;
+    color: #FFF;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.footer__text {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: 100;
+    }
+
+@media (min-width: 800px) {
+
+.footer__text {
+            display: inline;
+            margin-right: 1.4rem
+    }
+    }
