@@ -14,23 +14,23 @@
 <body>
   <header class="navbar">
     <div class="wrapper">
-        <div class="navbar__logo">
-            <!--<img src="assets/images/icons/globe.svg" class="svg globe">-->
-        </div>
-        <div class="navbar__menu-icon">
+      <div class="navbar__logo">
+        <!--<img src="assets/images/icons/globe.svg" class="svg globe">-->
+      </div>
+      <div class="navbar__menu-icon">
 
-        </div>
-        <div class="navbar__menu">
-            <div class="navbar__btn-container"><a href="#" class="btn">Contact Us</a></div>
-            <nav class="links">
-              <ul class="navbar__list">
-                <li class="navbar__li"><a href="#traveling">Where to Visit?</a></li>
-                <li class="navbar__li"><a href="#what-we-do">What We Do</a></li>
-                <li class="navbar__li"><a href="#about-us">About Us</a></li>
-              </ul>
-            </nav>
-        </div>
-        </div>
+      </div>
+      <div class="navbar__menu">
+        <div class="navbar__btn-container"><a href="#" class="btn">Contact Us</a></div>
+        <nav class="links">
+          <ul class="navbar__list">
+            <li class="navbar__li"><a href="#traveling">Where to Visit?</a></li>
+            <li class="navbar__li"><a href="#what-we-do">What We Do</a></li>
+            <li class="navbar__li"><a href="#about-us">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <div class="world-map">
@@ -51,6 +51,7 @@
         <h1 class="world-map__title">Travel Abroad</h1>
         <h2 class="world-map__subtitle">What's currently happening where you're traveling?</h2>
         <p class="world-map__description">We're here to help you figure out what's happening.</p>
+        <!--
         <div class="world-map__dropdown">
           <select>
             <option value="select-a-country">Select a Country</option>
@@ -60,7 +61,20 @@
             <option value="portugal">Portugal</option>
           </select>
         </div>
-        <!--<p><a href="#" class="btn btn--brown btn--large">Place/Countries</a></p>-->
+      -->
+        <div class="dropdown">
+          <button class="dropdown__button">Countries</button>
+          <div class="dropdown-content">
+            <a href="./countries/belgium.html">Belgium</a>
+            <a href="./countries/france.html">France</a>
+            <a href="./countries/germany.html">Germany</a>
+            <a href="./countries/italy.html">Italy</a>
+            <a href="./countries/portugal.html">Portugal</a>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
   </div>
@@ -72,7 +86,7 @@
       <h3 class="headline headline-- headline--brown headline--small headline--narrow headline--bot-margin-lg">But
         there's already sites for that. We're here to help you stay up to date with what's happening where you're
         traveling.</h3>
-    
+
       <div class="row__medium-4 row--gutters-small wrapper--countries">
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
@@ -82,7 +96,7 @@
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
       </div>
-      
+
       <div class="row__medium-4 row--gutters-small wrapper--countries">
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
         <img src="assets/images/placeholder-country.png" alt="placeholder country">
@@ -100,7 +114,8 @@
 
   <div id="what-we-do" class="page-section page-section--blue">
     <div class="wrapper">
-      <h2 class="section-title"><!--<img src="assets/images/icons/airplane.svg" class="svg section-title__icon">--> What We Do
+      <h2 class="section-title">
+        <!--<img src="assets/images/icons/airplane.svg" class="svg section-title__icon">--> What We Do
       </h2>
       <div class="row row--gutters-large generic-content-container">
         <div class="row__medium-6">
@@ -141,7 +156,8 @@
 
   <div id="about-us" class="page-section page-section--about-us page-section--no-b-padding-lg">
     <div class="wrapper wrapper--no-padding-until-lg">
-      <h2 class="section-title section-title--blue"><!--<img class="section-title__icon svg"
+      <h2 class="section-title section-title--blue">
+        <!--<img class="section-title__icon svg"
           src="assets/images/icons/multiple-users-silhouette.svg">-->About Us</h2>
 
       <div class="row row--gutters row--t-padding row--gutters-small row--equal-height-at-lg generic-content-container">
@@ -215,9 +231,10 @@
     </div>
   </div>
 
-  <footer class ="footer">
+  <footer class="footer">
     <div class="wrapper">
-        <p><span class="footer__text">Copyright 2019 Blah blah blah blah </span><a href="#" class="btn btn--brown">Contact Us</a></p>
+      <p><span class="footer__text">Copyright 2019 Blah blah blah blah </span><a href="#" class="btn btn--brown">Contact
+          Us</a></p>
     </div>
   </footer>
 </body>
