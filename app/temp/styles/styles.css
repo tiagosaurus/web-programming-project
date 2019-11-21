@@ -434,6 +434,20 @@ img {
         position: relative;
     }
 
+.world-map__images {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        padding: 0px 0px 0px 10px;
+
+
+    }
+
+.world-map__images img {
+            padding-left: 10px;
+        }
+
 .svg {
     width: 6rem;
     height: 6rem;
