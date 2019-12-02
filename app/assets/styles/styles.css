@@ -9,10 +9,11 @@
 @import "modules/_headlines.css";
 @import "modules/_row.css";
 @import "modules/_section-title.css";
-@import "modules/_feature-item.css";
+@import "modules/_what-we-do-item.css";
 @import "modules/_about-us.css";
 @import "modules/_generic-content-container.css";
 @import "modules/_traveling.css";
 @import "modules/_navbar.css";
 @import "modules/_footer.css";
-@import "modules/_dropdown.css">
+@import "modules/_item-reveal.css";
+@import "modules/_dropdown.css";

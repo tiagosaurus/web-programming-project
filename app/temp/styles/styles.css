@@ -834,32 +834,32 @@ img {
     }
     }
 
-.feature-item {
+.what-we-do-item {
   position: relative;
   padding-bottom: 2.5rem;
 }
 
 @media (min-width: 530px) {
 
-.feature-item {
+.what-we-do-item {
     padding-left: 94px
 }
     }
 
-.feature-item__icon {
+.what-we-do-item__icon {
     display: block;
     margin: 0 auto;
   }
 
 @media (min-width: 530px) {
 
-.feature-item__icon {
+.what-we-do-item__icon {
       position: absolute;
       left: 0
   }
     }
 
-.feature-item__title {
+.what-we-do-item__title {
     font-size: 1.6rem;
     font-weight: 300;
     margin-top: .7em;
@@ -869,7 +869,7 @@ img {
 
 @media (min-width: 530px) {
 
-.feature-item__title {
+.what-we-do-item__title {
       text-align: left;
       margin-top: 1em;
       font-size: 1.875rem
@@ -1202,6 +1202,20 @@ img {
             display: inline;
             margin-right: 1.4rem
     }
+    }
+
+.item-reveal {
+    opacity: 0;
+    -webkit-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+}
+
+.item-reveal--visible {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 
 .dropdown {
