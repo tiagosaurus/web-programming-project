@@ -12,6 +12,12 @@
 
     @mixin atMedium {
         background-color: rgba(54, 85, 143, 0.5);
+        position: fixed;    
+
+        &--dark {
+            /*background-color: rgba(23, 51, 72, 0.85);*/
+            background-color: rgba(85, 70, 64, 0.85);
+        }
     }
 
     &__btn-container {
@@ -151,6 +157,10 @@
             padding: 10px 0;
             font-size: 1rem;
             background-color: transparent;
+
+            &.current-link {
+                color: #00BFB2;
+            }
         }
     }
 

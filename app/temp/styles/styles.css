@@ -908,13 +908,13 @@ img {
         margin: 0;
         font-size: 1.5rem;
         text-align: center;
-        font-weight: 500;
+        font-weight: 1000;
     }
 
 .about-us__subtitle {
-        color: #554640;
+        color: #00BFB2;
         text-align: center;
-        font-weight: 400;
+        font-weight: 600;
         font-size: 0.9rem;
         margin: 0.25rem 0 1rem 0;
     }
@@ -962,8 +962,14 @@ img {
 @media (min-width: 800px) {
 
 .navbar {
-        background-color: rgba(54, 85, 143, 0.5)
-}
+        background-color: rgba(54, 85, 143, 0.5);
+        position: fixed
+}    
+
+        .navbar--dark {
+            /*background-color: rgba(23, 51, 72, 0.85);*/
+            background-color: rgba(85, 70, 64, 0.85);
+        }
     }
 
 @media (min-width: 800px) {
@@ -1152,6 +1158,10 @@ img {
             font-size: 1rem;
             background-color: transparent
     }
+
+            .links a.current-link {
+                color: #00BFB2;
+            }
     }
 
 /*
