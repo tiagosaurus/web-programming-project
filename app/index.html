@@ -54,17 +54,20 @@
         <h1 class="world-map__title">Travel Abroad</h1>
         <h2 class="world-map__subtitle">What's currently happening where you're traveling?</h2>
         <p class="world-map__description">We're here to help you figure out what's happening.</p>
-        <!--
+        
         <div class="world-map__dropdown">
-          <select>
-            <option value="select-a-country">Select a Country</option>
-            <option value="belgium.html">Belgium</option>
-            <option value="france">France</option>
-            <option value="germany">Germany</option>
-            <option value="portugal">Portugal</option>
+          <select name="countries" onchange="location = this.value;">
+            <option>Select a Country</option>
+            <option value="./countries/belgium.html">Belgium</option>
+            <option value="./countries/france.html">France</option>
+            <option value="./countries/germany.html">Germany</option>
+            <option value="./countries/portugal.html">Portugal</option>
+            <option value="./countries/italy.html">Italy</option>
+
           </select>
         </div>
-      -->
+
+        <!--
         <div class="dropdown">
           <button class="dropdown__button">Countries</button>
           <div class="dropdown-content">
@@ -75,7 +78,7 @@
             <a href="./countries/portugal.html">Portugal</a>
           </div>
         </div>
-
+      -->
 
 
       </div>
@@ -92,10 +95,14 @@
     </div>
 
     <div class="world-map__images">
-      <a href="./countries/belgium.html"><img class="world-map__country-links" src="assets/images/brussels-belgium-cropped.jpg  " alt="scenic paris france"></a>
-      <a href="./countries/portugal.html"><img class="world-map__country-links" src="assets/images/lisbon-portugal-cropped.jpg" alt="scenic lisbon portugal"></a>
-      <a href="./countries/italy.html"><img class="world-map__country-links" src="assets/images/milan-italy-cropped.jpg" alt="scenic milan italy"></a>
-      <a href="./countries/france.html"><img class="world-map__country-links" src="assets/images/paris-france-cropped.jpg" alt="scenic paris france"></a>
+      <a href="./countries/belgium.html"><img class="world-map__country-links"
+          src="assets/images/brussels-belgium-cropped.jpg  " alt="scenic paris france"></a>
+      <a href="./countries/portugal.html"><img class="world-map__country-links"
+          src="assets/images/lisbon-portugal-cropped.jpg" alt="scenic lisbon portugal"></a>
+      <a href="./countries/italy.html"><img class="world-map__country-links" src="assets/images/milan-italy-cropped.jpg"
+          alt="scenic milan italy"></a>
+      <a href="./countries/france.html"><img class="world-map__country-links"
+          src="assets/images/paris-france-cropped.jpg" alt="scenic paris france"></a>
       <!--<a href="./countries/germany.html"><img class="world-map__country-links" src="assets/images/berlin-germany-cropped.jpg" alt="scenic berlin germany"></a>-->
     </div>
     <div class="wrapper">
@@ -152,7 +159,8 @@
   </div>
 
 
-  <div id="about-us" class="page-section page-section--about-us page-section--no-b-padding-lg" data-link="#about-us-link">
+  <div id="about-us" class="page-section page-section--about-us page-section--no-b-padding-lg"
+    data-link="#about-us-link">
     <div class="wrapper wrapper--no-padding-until-lg">
       <h2 class="section-title section-title--blue">
         <!--<img class="section-title__icon svg"

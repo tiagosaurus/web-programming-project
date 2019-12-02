@@ -1,6 +1,6 @@
 .traveling {
-    &--picture {
-        display: block;
-        margin: 0 auto;
+
+    @mixin atLarge {
+
     }
 }

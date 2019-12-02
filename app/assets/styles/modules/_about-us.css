@@ -3,10 +3,12 @@
     padding: 0 2.25rem 1px 1.125rem;
     margin-bottom: 98px;
 
-    @mixin atMedium {
+    
+    @mixin atLarge {
         padding: 0 1.8125rem 1px 1.8125rem;
         margin-bottom: 0;
     }
+    
 
     &__picture {
         margin: 0 auto -80px auto;
@@ -21,7 +23,7 @@
 
     &__title {
         color: $defaultBlue;
-        margin: 0;
+        margin: 0.25rem;
         font-size: 1.5rem;
         text-align: center;
         font-weight: 1000;
@@ -35,8 +37,10 @@
         margin: 0.25rem 0 1rem 0;
     }
 
+    
     &--last {
         margin-bottom: 0;
     }
+    
 
 }

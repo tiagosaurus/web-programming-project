@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href='https://fonts.googleapis.com/css?family=Cantarell:400,100,300,500,700' rel='stylesheet' type='text/css'>
-        <title>What's Happening In Belgium?</title>
-        <meta name="keywords" content="Foreign news, Trending Topics, Travel Weather">
-        <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
-        <link rel="stylesheet" href="temp/styles/styles.css">
-    </head>
-</html> 
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>What's Happening In Germany?</title>
+    <meta name="keywords" content="Foreign news, Trending Topics, Travel Weather">
+    <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
+    <link rel="stylesheet" href="../temp/styles/styles.css">
+</head>
+
+<body>
+
+        <header class="navbar">
+                <div class="wrapper">
+                  <div class="navbar__logo">
+                  </div>
+                  <div class="navbar__menu-icon">
+            
+                    <div class="navbar__menu-icon__middle"></div>
+            
+                  </div>
+            
+                  <div class="navbar__menu">
+                    <div class="navbar__btn-container"><a href="../index.html" class="btn">Home</a></div>
+                    <nav class="links">
+                      <ul class="navbar__list">
+                        <li class="navbar__li"><a href="#trending" id="traveling-link">What's Trending?</a></li>
+                        <li class="navbar__li"><a href="#news" id="what-we-do-link">News</a></li>
+                        <li class="navbar__li"><a href="#weather" id="about-us-link">Weather</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </header>
+
+    <div class="world-map">
+        <picture>
+            <source srcset="../assets/images/germany--large.png 1920w, 
+                    ../assets/images/germany--large-hi-dpi.png 3840w" media="(min-width: 1380px">
+            <source srcset="../assets/images/world-map--medium.png 1380w, 
+                    ../assets/images/world-map--medium-hi-dpi.png 2760w" media="(min-width: 990px">
+            <source srcset="../assets/images/world-map--small.png 992w,
+                    ../assets/images/world-map--small-hi-dpi.png 1984w" media="(min-width: 640px">
+            <img srcset="../assets/images/world-map--smaller.png 640w, 
+                    ../assets/images/world-map--smaller-hi-dpi.png 1280w" alt="World Map" class="world-map__image">
+        </picture>
+
+        <div class="world-map__text-content">
+                <div class="wrapper">
+                  <h1 class="world-map__title">Germany</h1>
+                  <h2 class="world-map__subtitle">What's going on?</h2>
+                  <p class="world-map__description">We're here to help you figure out what's happening.</p>
+
+    </div>
+    <div class="basic-country-information">
+    </div>
+    <div class="news-content"></div>
+
+</body>
+
+</html>
