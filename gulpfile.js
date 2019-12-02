@@ -5,7 +5,8 @@ const postcss = require('gulp-postcss'),
       nestedcss = require('postcss-nested'),
       cssimport = require('postcss-import')
       browserSync = require('browser-sync').create()
-      mixins = require('postcss-mixins');
+      mixins = require('postcss-mixins'),
+      webpack = require('webpack');
 
 
 function browSync() {
@@ -32,10 +33,19 @@ function css() {
         .pipe(dest('./app/temp/styles'));
 }
 
+function webpackStuff(cb) {
+    webpack(require('./webpack.config.js'), () => {
+        console.log("YAY WEBPACK COMPLETED");
+        cb();
+    });
+
+}
+
 exports.default = () => {
     browSync();
     watch('./app/index.html', html);
     watch('./app/assets/styles/**/*.css', series(css, cssInject));
+    watch('./app/assets/scripts/**/*.js', series(webpackStuff, html));
 }
 
 
