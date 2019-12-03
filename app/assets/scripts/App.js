@@ -7,4 +7,5 @@ new MenuMobile();
 new ScrollReveal($(".what-we-do-item"), "85%");
 new ScrollReveal($(".about-us"), "65%");
 new ScrollReveal($(".world-map__country-links"), "85%");
+new ScrollReveal($(".text-scroll-reveal"), "85%");
 new Navbar();       
