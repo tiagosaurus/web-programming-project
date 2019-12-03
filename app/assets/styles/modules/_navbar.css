@@ -16,7 +16,8 @@
 
         &--dark {
             /*background-color: rgba(23, 51, 72, 0.85);*/
-            background-color: rgba(85, 70, 64, 0.85);
+            /*background-color: rgba(85, 70, 64, 0.85);*/
+            background-color: rgba(65, 104, 112, 0.85);
         }
     }
 
@@ -159,7 +160,7 @@
             background-color: transparent;
 
             &.current-link {
-                color: #00BFB2;
+                color: #AEFFD8;
             }
         }
     }

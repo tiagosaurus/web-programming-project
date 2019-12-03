@@ -1,5 +1,5 @@
 .about-us {
-    background-color: rgba(208, 227, 204, .8);
+    background-color: rgba(181, 191, 196, 0.85);
     padding: 0 2.25rem 1px 1.125rem;
     margin-bottom: 98px;
 
@@ -12,7 +12,7 @@
 
     &__picture {
         margin: 0 auto -80px auto;
-        border: 8px solid rgba(208, 227, 204, .8);
+        border: 8px solid rgba(181, 191, 196, 0.85);
         position: relative;
         border-radius: 80px;
         overflow: hidden;
@@ -30,7 +30,7 @@
     }
 
     &__subtitle {
-        color: #00BFB2;
+        color: #273C2C;
         text-align: center;
         font-weight: 600;
         font-size: 0.9rem;

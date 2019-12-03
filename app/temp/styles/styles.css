@@ -413,7 +413,7 @@ img {
 
 .world-map__description {
         font-weight: 100;
-        color: #554640;
+        color: #416870;
         font-size: 1.1rem;
         text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
         max-width: 30rem;
@@ -471,7 +471,7 @@ img {
 }
 
 .btn--brown {
-        background-color: #554640;
+        background-color: #416870;
     }
 
 .btn--large {
@@ -620,7 +620,7 @@ img {
     }
 
 .headline--brown {
-        color: #554640;
+        color: #416870;
     }
 
 .headline--small {
@@ -877,7 +877,7 @@ img {
     }
 
 .about-us {
-    background-color: rgba(208, 227, 204, .8);
+    background-color: rgba(181, 191, 196, 0.85);
     padding: 0 2.25rem 1px 1.125rem;
     margin-bottom: 98px;
     
@@ -896,7 +896,7 @@ img {
 
 .about-us__picture {
         margin: 0 auto -80px auto;
-        border: 8px solid rgba(208, 227, 204, .8);
+        border: 8px solid rgba(181, 191, 196, 0.85);
         position: relative;
         border-radius: 80px;
         overflow: hidden;
@@ -914,7 +914,7 @@ img {
     }
 
 .about-us__subtitle {
-        color: #00BFB2;
+        color: #273C2C;
         text-align: center;
         font-weight: 600;
         font-size: 0.9rem;
@@ -968,7 +968,8 @@ img {
 
         .navbar--dark {
             /*background-color: rgba(23, 51, 72, 0.85);*/
-            background-color: rgba(85, 70, 64, 0.85);
+            /*background-color: rgba(85, 70, 64, 0.85);*/
+            background-color: rgba(65, 104, 112, 0.85);
         }
     }
 
@@ -1160,7 +1161,7 @@ img {
     }
 
             .links a.current-link {
-                color: #00BFB2;
+                color: #AEFFD8;
             }
     }
 
@@ -1234,7 +1235,7 @@ img {
 }
 
 .dropdown__button {
-        background-color: #554640;    
+        background-color: #416870;    
         color: #FFF;
         padding: 1.5rem;
         font-size: 1.5rem;
