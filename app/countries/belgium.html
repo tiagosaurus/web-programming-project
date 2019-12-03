@@ -61,6 +61,12 @@
     <div id="basic-info" class="page-section" data-link="#basic-link">
         <div class="wrapper">
             <h2 class="section-title section-title--blue">Basic Info</h2>
+            <ul class="info-list">
+                <li id="alpha3code" class="info-item">Three letter code: </li>
+                <li id="country-name" class="info-item">Country Name: </li>
+                <li id="region" class="info-item">Region: </li>
+                <li id="currency" class="info-item">Currency: </li>
+            </ul>
         </div>
     </div>
 
@@ -88,6 +94,28 @@
 
     </footer>
     <script src="/temp/scripts/App.js"></script>
+    <script>
+        const url = 'https://restcountries.eu/rest/v2/name/'
+        async function getData(){
+        // let spec_name = document.getElementById('countries').value;
+            let name_display = document.getElementsByClassName('info-list');
+            let country = document.getElementsByClassName('world-map__title');
+            let country_name = country[0].innerHTML;
+            const data_url = url + country_name;
+            const response = await fetch(data_url);
+            const data = await response.json();
+            console.log(data);
+            
+
+            document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
+            document.getElementById('country-name').innerHTML += data[0].name;
+            document.getElementById('region').innerHTML += data[0].region;
+            document.getElementById('currency').innerHTML += data[0].currencies[0].name;
+
+        }
+        getData();
+    
+    </script>
 
 </body>
 
