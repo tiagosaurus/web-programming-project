@@ -25,7 +25,7 @@
           parens_location = element.name.indexOf('(');
           if(parens_location > 0){
             let old_name = element.name
-            if (element.name.substring(0, 3) != 'Korea'.substring(0, 3) && element.name.substring(0, 3) != 'Virgin Islands'.substring(0, 3)){
+            if (element.name.substring(0, 2) != 'Ko' && element.name.substring(0, 2) != 'Vi'){
               element.name = element.name.slice(0, parens_location-1);
             }
           }
