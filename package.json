@@ -2,6 +2,7 @@
   "name": "web-programming-testing",
   "version": "1.0.0",
   "dependencies": {
+    "express": "^4.17.1",
     "gulp-cli": "^2.2.0",
     "jquery": "^3.4.1",
     "jquery-smooth-scroll": "^2.2.0",
