@@ -1,4 +1,3 @@
-# Numerous always-ignore extensions
 *.diff
 *.err
 *.orig
@@ -12,7 +11,6 @@
 node_modules/
 .tmp/
 
-# OS or Editor folders
 .DS_Store
 Thumbs.db
 .cache

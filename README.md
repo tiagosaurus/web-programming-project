@@ -2,19 +2,19 @@
 
 ### Team Name: JABE
 
-### Team Member Markdowns:
+### Team Members:
 
-##### - [Adam Tiago](/team/adamTiago.md)
-##### - [Benjamin Brennan](/team/benBrennan.md)
-##### - Joe Maguire
-##### - [Elise Symmes](/team/eliseSymmes.md)
+##### - Adam Tiago [Github](https://github.com/tiagosaurus/)
+##### - Benjamin Brennan [Github](https://github.com/b-brennan)
+##### - Joe Maguire [Github](https://github.com/joemaguire19)
+##### - Elise Symmes [Github](https://github.com/EliseSymmes)
 
-### Overview:
+### Project Description:
 Travel Guide - provide users with the ability to select a country/area and provide information with what is going on in specified area.
 
-### Integrative Experience:
-Encourages people to travel and learn more about other cultures/countries.
+### Installation Instructions:
 
+<!--
 ### Other Ideas:
 
 - Planning thing to share availability for team meetings
@@ -23,3 +23,4 @@ Encourages people to travel and learn more about other cultures/countries.
 - Graduation requirement tracker and manager
 
 ### Topic Requirements
+-->

@@ -9,24 +9,24 @@
   <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
   <link rel="stylesheet" href="temp/styles/styles.css">
   <script>
-  window.onload = async function () {
-    const region_url = 'https://restcountries.eu/rest/v2/region/'
-    let select = document.getElementById("country")
-    let regions = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania']
-    for(var i = 0; i < 5; ++i) {
+    window.onload = async function () {
+      const region_url = 'https://restcountries.eu/rest/v2/region/'
+      let select = document.getElementById("country")
+      let regions = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania']
+      for (var i = 0; i < 5; ++i) {
         let optionGroup = document.createElement('optgroup');
         optionGroup.label = regions[i];
         optionGroup.text = regions[i];
         let data_url = region_url + regions[i];
-        let response =  await fetch(data_url);
+        let response = await fetch(data_url);
         let data = await response.json();
         data.forEach(element => {
           let option = document.createElement('option');
           parens_location = element.name.indexOf('(');
-          if(parens_location > 0){
+          if (parens_location > 0) {
             let old_name = element.name
-            if (element.name.substring(0, 2) != 'Ko' && element.name.substring(0, 2) != 'Vi'){
-              element.name = element.name.slice(0, parens_location-1);
+            if (element.name.substring(0, 2) != 'Ko' && element.name.substring(0, 2) != 'Vi') {
+              element.name = element.name.slice(0, parens_location - 1);
             }
           }
           option.text = element.name;
@@ -34,8 +34,8 @@
           optionGroup.appendChild(option, 0);
         });
         select.appendChild(optionGroup);
-    }
-  }</script>
+      }
+    }</script>
 </head>
 
 <body>
@@ -81,35 +81,6 @@
         <select class="dropdownOptions" name="country" id="country">
           <option></option>
         </select>
-
-        <!--
-        <div class="world-map__dropdown">
-          <select name="countries" onchange="location = this.value;">
-            <option>Select a Country</option>
-            <option value="./countries/belgium.html">Belgium</option>
-            <option value="./countries/france.html">France</option>
-            <option value="./countries/germany.html">Germany</option>
-            <option value="./countries/portugal.html">Portugal</option>
-            <option value="./countries/italy.html">Italy</option>
-
-          </select>
-        </div>
-      -->
-
-        <!--
-        <div class="dropdown">
-          <button class="dropdown__button">Countries</button>
-          <div class="dropdown-content">
-            <a href="./countries/belgium.html">Belgium</a>
-            <a href="./countries/france.html">France</a>
-            <a href="./countries/germany.html">Germany</a>
-            <a href="./countries/italy.html">Italy</a>
-            <a href="./countries/portugal.html">Portugal</a>
-          </div>
-        </div>
-      -->
-
-
       </div>
     </div>
   </div>
