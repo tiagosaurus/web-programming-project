@@ -13,7 +13,6 @@ new Navbar();
 
 $(".dropdownOptions").select2({
     placeholder: "Select a Country",
-    dropdownAutoWidth : true,
     width: 'auto'
 });
 
