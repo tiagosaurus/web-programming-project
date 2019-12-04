@@ -8,7 +8,34 @@
   <meta name="keywords" content="Foreign news, Trending Topics, Travel Weather">
   <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
   <link rel="stylesheet" href="temp/styles/styles.css">
-
+  <script>
+  window.onload = async function () {
+    const region_url = 'https://restcountries.eu/rest/v2/region/'
+    let select = document.getElementById("country")
+    let regions = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania']
+    for(var i = 0; i < 5; ++i) {
+        let optionGroup = document.createElement('optgroup');
+        optionGroup.label = regions[i];
+        optionGroup.text = regions[i];
+        let data_url = region_url + regions[i];
+        let response =  await fetch(data_url);
+        let data = await response.json();
+        data.forEach(element => {
+          let option = document.createElement('option');
+          parens_location = element.name.indexOf('(');
+          if(parens_location > 0){
+            let old_name = element.name
+            if (element.name.substring(0, 3) != 'Korea'.substring(0, 3) && element.name.substring(0, 3) != 'Virgin Islands'.substring(0, 3)){
+              element.name = element.name.slice(0, parens_location-1);
+            }
+          }
+          option.text = element.name;
+          option.value = './countries/' + option.text + '.html';
+          optionGroup.appendChild(option, 0);
+        });
+        select.appendChild(optionGroup);
+    }
+  }</script>
 </head>
 
 <body>
@@ -51,20 +78,8 @@
         <p class="world-map__description">We're here to help you figure out what's happening.</p>
 
 
-        <select class="dropdownOptions" name="country">
+        <select class="dropdownOptions" name="country" id="country">
           <option></option>
-          <optgroup label='Europe'>
-            <option value="countries/belgium.html">Belgium</option>
-            <option value="./countries/france.html">France</option>
-            <option value="./countries/germany.html">Germany</option>
-            <option value="./countries/portugal.html">Portugal</option>
-            <option value="./countries/italy.html">Italy</option>
-          </optgroup>
-          <optgroup label='Asia'></optgroup>
-          <optgroup label='North America'></optgroup>
-          <optgroup label='South America'></optgroup>
-          <optgroup label='Africa'></optgroup>
-          <optgroup label='Australia'></optgroup>
         </select>
 
         <!--
