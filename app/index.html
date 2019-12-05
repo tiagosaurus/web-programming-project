@@ -30,7 +30,7 @@
             }
           }
           option.text = element.name;
-          option.value = './countries/' + option.text + '.html';
+          option.value = './countries/' + element.alpha3Code + '.html';
           optionGroup.appendChild(option, 0);
         });
         select.appendChild(optionGroup);
