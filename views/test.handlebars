@@ -31,7 +31,7 @@
             }
           }
           option.text = element.name;
-          option.value = '../app/countries/' + option.text + '.html';
+          option.value = './app/countries/' + element.alpha3Code + '.html';
           optionGroup.appendChild(option, 0);
         });
         select.appendChild(optionGroup);
