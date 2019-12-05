@@ -72,8 +72,9 @@ app.post('/send', (req, res) => {
         // res.render('test', {msg: 'Email has been sent'},{
         //             layout: false,
         // )};
-        res.render("test", /*{msg: 'Email sent'},*/ {
+        res.render("test", {
             layout: false,
+            msg: 'Email sent',
             });
     });
 });

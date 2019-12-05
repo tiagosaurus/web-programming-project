@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../app/temp/styles/styles.css">
 
   <script>
+    function thanks(){
+      alert("Thanks for your feedback!");
+    }
     window.onload = async function () {
       const region_url = 'https://restcountries.eu/rest/v2/region/'
       let select = document.getElementById("country")
@@ -47,7 +50,7 @@
       </div>
 
       <div class="navbar__menu">
-        <div class="navbar__btn-container"><a href="#" class="btn">Contact Us</a></div>
+        <div class="navbar__btn-container"><a href="#contact-us" class="btn">Contact Us</a></div>
         <nav class="links">
           <ul class="navbar__list">
             <li class="navbar__li"><a href="#traveling" id="traveling-link">Where to Visit?</a></li>
@@ -233,9 +236,8 @@
     </div>
   </div>
 
-  <div class="contact-us">
+  <div class="contact-us" class="page-section">
     <h2>Contact Us</h2>
-    {{msg}}
     <form method="POST" action="send">
       <div id="center">
         <div id="name">
@@ -250,7 +252,7 @@
           <label>Message: </label> <br>
           <textarea name="message"></textarea>
         </div> 
-        <button type="submit">Submit!</button>
+        <button onclick='thanks()' type="submit">Submit!</button>
       </div>
     </form>
   </div>
