@@ -25,7 +25,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-    // console.log(req.body);
     const output = `
     <p>You have a new contact request</p>
     <h3>Contact Details</h3>
@@ -68,14 +67,7 @@ app.post('/send', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-        // res.render('test', {msg: 'Email has been sent'},{
-        //             layout: false,
-        // )};
-        res.render("test", {
-            layout: false,
-            msg: 'Email sent',
-            });
+        res.redirect('back');
     });
 });
 
