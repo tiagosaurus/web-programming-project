@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="../app/temp/styles/styles.css">
 
   <script>
-    function thanks(){
+    function contact_submit(){
+      document.getElementById("email_form").reset();
       alert("Thanks for your feedback!");
     }
     window.onload = async function () {
@@ -238,7 +239,7 @@
 
   <div class="contact-us" class="page-section">
     <h2>Contact Us</h2>
-    <form method="POST" action="send">
+    <form method="POST" action="send" id="email_form">
       <div id="center">
         <div id="name">
           <label>Name: </label> <br>
@@ -252,7 +253,7 @@
           <label>Message: </label> <br>
           <textarea name="message"></textarea>
         </div> 
-        <button onclick='thanks()' type="submit">Submit!</button>
+        <button onclick='contact_submit()' type="submit">Submit!</button>
       </div>
     </form>
   </div>
