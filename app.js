@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.render("test", {
         layout: false,
+        mem: ""
         });
 });
 
@@ -67,7 +68,10 @@ app.post('/send', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        res.redirect('back');
+        res.render('test', {
+            mem: "Thanke you for your feedback!",
+            layout: false,
+        });
     });
 });
 

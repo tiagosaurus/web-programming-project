@@ -10,11 +10,12 @@
   <link rel="stylesheet" href="../app/temp/styles/styles.css">
 
   <script>
-    function contact_submit(){
-      document.getElementById("email_form").reset();
-      alert("Thanks for your feedback!");
-    }
     window.onload = async function () {
+      mem = document.getElementById("memory").innerHTML
+      if(mem != ''){
+        alert(mem)
+        window.location.replace('..')
+      }
       const region_url = 'https://restcountries.eu/rest/v2/region/'
       let select = document.getElementById("country")
       let regions = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania']
@@ -45,6 +46,7 @@
 
 <body>
   <header class="navbar">
+    <div id="memory" style="display: none;">{{mem}}</div>
     <div class="wrapper">
       <div class="navbar__menu-icon">
         <div class="navbar__menu-icon__middle"></div>
@@ -239,7 +241,7 @@
 
   <div class="contact-us" class="page-section">
     <h2>Contact Us</h2>
-    <form method="POST" action="send">
+    <form method="POST" action="send" id="email_form">
       <div id="center">
         <div id="name">
           <label>Name: </label> <br>
@@ -253,7 +255,7 @@
           <label>Message: </label> <br>
           <textarea name="message"></textarea>
         </div> 
-        <button onclick='contact_submit()' type="submit">Submit!</button>
+        <button type="submit">Submit!</button>
       </div>
     </form>
   </div>
