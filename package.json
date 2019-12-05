@@ -2,10 +2,14 @@
   "name": "web-programming-testing",
   "version": "1.0.0",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "gulp-cli": "^2.2.0",
     "jquery": "^3.4.1",
     "jquery-smooth-scroll": "^2.2.0",
+    "nodemailer": "^6.4.0",
+    "nodemon": "^2.0.1",
     "normalize.css": "^8.0.1",
     "select2": "^4.0.12",
     "waypoints": "^4.0.1"
