@@ -69,13 +69,14 @@
 
     <div id="basic-info" class="page-section" data-link="#basic-link">
         <div class="wrapper">
-            <h2 class="section-title section-title--blue">Basic Info</h2>
+            <h2 class="section-title section-title--blue">Basic Information</h2>
             <ul class="info-list">
+                <img id="flag" class="info-item" src="">
                 <li id="alpha3code" class="info-item">Three letter code: </li>
                 <li id="country-name" class="info-item">Country Name: </li>
                 <li id="region" class="info-item">Region: </li>
                 <li id="currency" class="info-item">Currency: </li>
-                <img id="flag" class="info-itme" src="">
+                <li id="population" class="info-item">Population: </li>
             </ul>
         </div>
     </div>
@@ -111,13 +112,13 @@
             const data_url = url + country_name;
             const response = await fetch(data_url);
             const data = await response.json();
+            document.getElementById('flag').src = data[0].flag;
             document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
             document.getElementById('country-name').innerHTML += data[0].name;
             document.getElementById('region').innerHTML += data[0].region;
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
-            document.getElementById('flag').src = data[0].flag;
+            document.getElementById('population').innerHTML += data[0].population;
             // this is just decreasong the flag size a bit, get rid of it if you want when doing real flag formatting
-            document.getElementById('flag').style.width = '200px';
         }
         getData();
 

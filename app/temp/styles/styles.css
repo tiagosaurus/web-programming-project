@@ -1805,3 +1805,49 @@ img {
 
 .select2-container--classic.select2-container--open .select2-dropdown {
   border-color: #5897fb; }
+
+
+
+  .contact-us {
+    background-color: #416870;
+    margin: auto;
+    padding: 20px 0;
+  }
+  .contact-us h2 {
+    text-align: center;
+    color: white;
+  }
+  .contact-us label {
+    color: white;
+  }
+  .contact-us #center {
+    width: 100%;
+    text-align: center;
+  }
+  .contact-us #form {
+    margin: 0 auto;
+  }
+  .contact-us input, textarea {
+    width: 200px;
+  }
+  .contact-us textarea {
+    width: 200px;
+    height: 100px;
+  }
+  .contact-us button {
+    border: none;
+  }
+
+  #flag {
+    box-shadow: 10px 10px 5px grey;
+
+    width: 16.666666667‬rem;
+    height: 10rem;
+    z-index: 2;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: .1rem solid #495457;
+    border-top: .1rem solid #495457;
+  }
+
