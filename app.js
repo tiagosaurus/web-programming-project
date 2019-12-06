@@ -19,9 +19,9 @@ app.use(bodyParser.json());
 
 // Routes 
 app.get('/', (req, res) => {
-    res.render("test", {
+    res.render("main", {
         layout: false,
-        mem: req.params.test
+        mem: req.params.main
         });
 });
 
@@ -38,7 +38,7 @@ app.get('/countries/:alpha3Code', async function(req, res) {
         });
     }
     else {
-        res.render('test', {
+        res.render('main', {
             mem: "Sorry, " + req.params.alpha3Code + " is not a recognized country code.",
             layout: false,
         });
@@ -88,7 +88,7 @@ app.post('/send', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        res.render('test', {
+        res.render('main', {
             mem: "Thank you for your feedback!",
             layout: false,
         });
