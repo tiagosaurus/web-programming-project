@@ -27,10 +27,13 @@ app.get('/', (req, res) => {
 
 app.get('/countries/:alpha3Code', async function(req, res) {
     let url = 'https://restcountries.eu/rest/v2/alpha/' + req.params.alpha3Code
-    let country_name = await fetch(url).then(res => res.json()).then(json => json.name);
-    if (typeof country_name !== 'undefined'){
+    let country_data = await fetch(url).then(res => res.json()).then(json => json);
+    if (typeof country_data !== 'undefined'){
+        let country_name = country_data.name
+        let country_region = country_data.region
         res.render('country', {
             country_name: country_name,
+            region: country_region,
             layout: false,
         });
     }
