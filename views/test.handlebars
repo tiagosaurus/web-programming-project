@@ -19,7 +19,7 @@
       const region_url = 'https://restcountries.eu/rest/v2/region/'
       let select = document.getElementById("country")
       let regions = ['Europe', 'Americas', 'Asia', 'Africa', 'Oceania']
-      for (var i = 0; i < 5; ++i) {
+      for (let i = 0; i < 5; ++i) {
         let optionGroup = document.createElement('optgroup');
         optionGroup.label = regions[i];
         optionGroup.text = regions[i];
@@ -40,6 +40,25 @@
           optionGroup.appendChild(option, 0);
         });
         select.appendChild(optionGroup);
+      }
+      let scenic_locations = [
+        {'name': 'Brussels', 'src': "../app/assets/images/brussels-belgium-cropped.jpg", 'href': './app/countries/BEL.html', 'alt': "Scenic Brussels"}, 
+        {'name': 'Lisbon', 'src': "../app/assets/images/lisbon-portugal-cropped.jpg", 'href': './app/countries/PRT.html', 'alt': "Scenic Lisbon"}, 
+        {'name': 'Milan', 'src': "../app/assets/images/milan-italy-cropped.jpg", 'href': './app/countries/ITA.html', 'alt': "Scenic Milan"}, 
+        {'name': 'Paris', 'src': "../app/assets/images/paris-france-cropped.jpg", 'href': './app/countries/FRA.html', 'alt': "Scenic Paris"}];
+      let selected = [-1, -1, -1, -1]
+      for (let i = 0; i < 4; ++i){
+        let rand_int = -1;
+        while(selected.includes(rand_int)){
+          rand_int = Math.floor(Math.random() * scenic_locations.length);
+        }
+        selected[i] = rand_int;
+      }
+      let links = document.querySelectorAll("#scenic");
+      for (let i = 0; i < links.length; ++i){
+        links[i].src = scenic_locations[selected[i]].src;
+        links[i].href = scenic_locations[selected[i]].href;
+        links[i].alt = scenic_locations[selected[i]].alt;
       }
     }</script>
 </head>
@@ -102,15 +121,23 @@
     </div>
 
     <div class="world-map__images">
-      <a href="./countries/belgium.html"><img class="world-map__country-links"
+      {{!-- <a href="./countries/belgium.html"><img class="world-map__country-links"
           src="../app/assets/images/brussels-belgium-cropped.jpg  " alt="scenic paris france"></a>
       <a href="./countries/portugal.html"><img class="world-map__country-links"
           src="../app/assets/images/lisbon-portugal-cropped.jpg" alt="scenic lisbon portugal"></a>
       <a href="./countries/italy.html"><img class="world-map__country-links" src="../app/assets/images/milan-italy-cropped.jpg"
           alt="scenic milan italy"></a>
       <a href="./countries/france.html"><img class="world-map__country-links"
-          src="../app/assets/images/paris-france-cropped.jpg" alt="scenic paris france"></a>
-      <!--<a href="./countries/germany.html"><img class="world-map__country-links" src="assets/images/berlin-germany-cropped.jpg" alt="scenic berlin germany"></a>-->
+          src="../app/assets/images/paris-france-cropped.jpg" alt="scenic paris france"></a> --}}
+      <a href="/"><img class="world-map__country-links"
+          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
+      <a href="/"><img class="world-map__country-links"
+          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
+      <a href="/"><img class="world-map__country-links"
+          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
+      <a href="/"><img class="world-map__country-links"
+          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
+    
     </div>
     <div class="wrapper text-scroll-reveal">
       <h2 class="headline">Something something.</h2>
