@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>What's Happening In {{country_name}}?</title>
+    <meta name="keywords" content="Foreign news, Trending Topics, Travel Weather">
+    <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
+    <link rel="stylesheet" href="../app/temp/styles/styles.css">
+    <script>
+        window.onload = function () {
+            let country_name = document.getElementById("country_name").innerHTML;
+            if (['Belgium', 'Germany', 'France', 'Italy', 'Portugal'].includes(country_name)){
+                let picture = document.getElementById("region_image")
+                picture.innerHTML = '<source srcset="../app/assets/images/' + country_name + '--large.png 1920w, ../app/assets/images/' + country_name + '--large-hi-dpi.png 3840w" media="(min-width: 1380px"><source srcset="../app/assets/images/' + country_name + '--medium.png 1380w, ../app/assets/images/' + country_name + '--medium-hi-dpi.png 2760w" media="(min-width: 990px"><source srcset="../app/assets/images/' + country_name + '--small.png 992w, ../app/assets/images/' + country_name + '--small-hi-dpi.png 1984w" media="(min-width: 640px"><img srcset="../app/assets/images/' + country_name + '--smaller.png 640w, ../app/assets/images/' + country_name + '--smaller-hi-dpi.png 1280w" alt="world map focused on {{country_name}}" class="world-map__image">';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="country_name" style="display: none;">{{country_name}}</div>
+    <div id="region" style="display: none;">{{region}}</div>
+    <header class="navbar">
+        <div class="wrapper">
+            <div class="navbar__logo">
+            </div>
+            <div class="navbar__menu-icon">
+
+                <div class="navbar__menu-icon__middle"></div>
+
+            </div>
+
+            <div class="navbar__menu">
+                <div class="navbar__btn-container"><a href="../../" class="btn">Home</a></div>
+                <nav class="links">
+                    <ul class="navbar__list">
+                        <li class="navbar__li"><a href="#basic-info" id="basic-link">Basic Info</a></li>
+                        <li class="navbar__li"><a href="#news" id="news-link">News</a></li>
+                        <li class="navbar__li"><a href="#trending" id="trending-link">What's Trending?</a></li>
+                        <li class="navbar__li"><a href="#weather" id="weather-link">Weather</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="world-map">
+        <picture id="region_image">
+            <img src="../app/assets/images/{{region}}.png" alt="world map focused on {{country_name}}" class="world-map__image"></img>
+        </picture>
+
+        <div class="world-map__text-content">
+            <div class="wrapper">
+                <h1 class="world-map__title">{{country_name}}</h1>
+                <h2 class="world-map__subtitle">What's going on?</h2>
+                <p class="world-map__description">We're here to help you figure out what's happening.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="basic-info" class="page-section" data-link="#basic-link">
+        <div class="wrapper">
+            <h2 class="section-title section-title--blue">Basic Info</h2>
+            <ul class="info-list">
+                <li id="alpha3code" class="info-item">Three letter code: </li>
+                <li id="country-name" class="info-item">Country Name: </li>
+                <li id="region" class="info-item">Region: </li>
+                <li id="currency" class="info-item">Currency: </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="news" class="page-section page-section--blue" data-link="#news-link">
+        <div class="wrapper">
+            <h2 class="section-title">Current News</h2>
+        </div>
+    </div>
+
+    <div id="trending" class="page-section" data-link="#trending-link">
+        <div class="wrapper">
+            <h2 class="section-title section-title--blue">What's Trending?</h2>
+        </div>
+    </div>
+
+    <div id="weather" class="page-section page-section--blue" data-link="#weather-link">
+            <div class="wrapper">
+                <h2 class="section-title">Weather</h2>
+            </div>
+    </div>
+
+
+    <footer>
+
+    </footer>
+    <script src="../app/temp/scripts/App.js"></script>
+    <script>
+        const url = 'https://restcountries.eu/rest/v2/name/'
+        async function getData(){
+            let country_name = document.getElementById("country_name").innerHTML;
+            const data_url = url + country_name;
+            const response = await fetch(data_url);
+            const data = await response.json();
+            document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
+            document.getElementById('country-name').innerHTML += data[0].name;
+            document.getElementById('region').innerHTML += data[0].region;
+            document.getElementById('currency').innerHTML += data[0].currencies[0].name;
+        }
+        getData();
+    
+    </script>
+
+</body>
+
+</html>
