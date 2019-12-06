@@ -36,7 +36,7 @@
                 <div class="navbar__btn-container"><a href="../../" class="btn">Home</a></div>
                 <nav class="links">
                     <ul class="navbar__list">
-                        <li class="navbar__li"><a href="#basic-info" id="basic-link">Basic Stuff</a></li>
+                        <li class="navbar__li"><a href="#basic-info" id="basic-link">Basic Info</a></li>
                         <li class="navbar__li"><a href="#news" id="news-link">News</a></li>
                         <li class="navbar__li"><a href="#trending" id="trending-link">What's Trending?</a></li>
                         <li class="navbar__li"><a href="#weather" id="weather-link">Weather</a></li>
@@ -118,7 +118,6 @@
             document.getElementById('country-name').innerHTML += data[0].name;
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
             document.getElementById('population').innerHTML += data[0].population + ' people';
-            // this is just decreasong the flag size a bit, get rid of it if you want when doing real flag formatting
             
         }
         getData();
