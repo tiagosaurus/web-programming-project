@@ -68,6 +68,7 @@
                 <li id="country-name" class="info-item">Country Name: </li>
                 <li id="region" class="info-item">Region: </li>
                 <li id="currency" class="info-item">Currency: </li>
+                <img id="flag" class="info-itme" src="">
             </ul>
         </div>
     </div>
@@ -107,6 +108,9 @@
             document.getElementById('country-name').innerHTML += data[0].name;
             document.getElementById('region').innerHTML += data[0].region;
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
+            document.getElementById('flag').src = data[0].flag;
+            // this is just decreasong the flag size a bit, get rid of it if you want when doing real flag formatting
+            document.getElementById('flag').style.width = '200px';
         }
         getData();
     
