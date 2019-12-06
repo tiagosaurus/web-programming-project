@@ -12,34 +12,34 @@
   <script>
     window.onload = async function () {
       mem = document.getElementById("memory").innerHTML
-      if(mem != ''){
+      if (mem != '') {
         alert(mem)
         window.location.replace('..')
       }
       let scenic_locations = [
-        {'name': 'Brussels', 'src': "../app/assets/images/brussels-belgium-cropped.jpg", 'href': './countries/BEL', 'alt': "Scenic Brussels"}, 
-        {'name': 'Lisbon', 'src': "../app/assets/images/lisbon-portugal-cropped.jpg", 'href': './countries/PRT', 'alt': "Scenic Lisbon"}, 
-        {'name': 'Milan', 'src': "../app/assets/images/milan-italy-cropped.jpg", 'href': './countries/ITA', 'alt': "Scenic Milan"}, 
-        {'name': 'Paris', 'src': "../app/assets/images/paris-france-cropped.jpg", 'href': './countries/FRA', 'alt': "Scenic Paris"},
-        {'name': 'Arctic Coast', 'src': "../app/assets/images/arctic-coast-way-iceland.jpg", 'href': './countries/ICL', 'alt': "Scenic Iceland"},
-        {'name': 'Hercegovina', 'src': "../app/assets/images/hercegovina.jpg", 'href': './countries/BIH', 'alt': "Scenic Hercegovina"},
-        {'name': 'Istria', 'src': "../app/assets/images/istria-croatria.jpg", 'href': './countries/HRV', 'alt': "Scenic Croatia"},
-        {'name': 'Liechtenstein', 'src': "../app/assets/images/liechtenstein.jpg", 'href': './countries/LIE', 'alt': "Scenic Liechtenstein"},
-        {'name': 'Madrid', 'src': "../app/assets/images/madrid-spain.jpg", 'href': './countries/ESP', 'alt': "Scenic Spain"},
-        {'name': 'Shetland', 'src': "../app/assets/images/shetland-scotland.jpg", 'href': './countries/GBR', 'alt': "Scenic Shetland, like the pony"},
-        {'name': 'Vevey', 'src': "../app/assets/images/vevey-switzerland.jpg", 'href': './countries/CHE', 'alt': "Scenic Switzerland"},
-        {'name': 'Berlin', 'src': "../app/assets/images/berlin-germany-cropped.jpg", 'href': './countries/DEU', 'alt': "Scenic Berlin"}];
+        { 'name': 'Brussels', 'src': "../app/assets/images/brussels-belgium-cropped.jpg", 'href': './countries/BEL', 'alt': "Scenic Brussels" },
+        { 'name': 'Lisbon', 'src': "../app/assets/images/lisbon-portugal-cropped.jpg", 'href': './countries/PRT', 'alt': "Scenic Lisbon" },
+        { 'name': 'Milan', 'src': "../app/assets/images/milan-italy-cropped.jpg", 'href': './countries/ITA', 'alt': "Scenic Milan" },
+        { 'name': 'Paris', 'src': "../app/assets/images/paris-france-cropped.jpg", 'href': './countries/FRA', 'alt': "Scenic Paris" },
+        { 'name': 'Arctic Coast', 'src': "../app/assets/images/arctic-coast-way-iceland.jpg", 'href': './countries/ICL', 'alt': "Scenic Iceland" },
+        { 'name': 'Hercegovina', 'src': "../app/assets/images/hercegovina.jpg", 'href': './countries/BIH', 'alt': "Scenic Hercegovina" },
+        { 'name': 'Istria', 'src': "../app/assets/images/istria-croatria.jpg", 'href': './countries/HRV', 'alt': "Scenic Croatia" },
+        { 'name': 'Liechtenstein', 'src': "../app/assets/images/liechtenstein.jpg", 'href': './countries/LIE', 'alt': "Scenic Liechtenstein" },
+        { 'name': 'Madrid', 'src': "../app/assets/images/madrid-spain.jpg", 'href': './countries/ESP', 'alt': "Scenic Spain" },
+        { 'name': 'Shetland', 'src': "../app/assets/images/shetland-scotland.jpg", 'href': './countries/GBR', 'alt': "Scenic Shetland, like the pony" },
+        { 'name': 'Vevey', 'src': "../app/assets/images/vevey-switzerland.jpg", 'href': './countries/CHE', 'alt': "Scenic Switzerland" },
+        { 'name': 'Berlin', 'src': "../app/assets/images/berlin-germany-cropped.jpg", 'href': './countries/DEU', 'alt': "Scenic Berlin" }];
       let selected = [-1, -1, -1, -1]
-      for (let i = 0; i < 4; ++i){
+      for (let i = 0; i < 4; ++i) {
         let rand_int = -1;
-        while(selected.includes(rand_int)){
+        while (selected.includes(rand_int)) {
           rand_int = Math.floor(Math.random() * scenic_locations.length);
         }
         selected[i] = rand_int;
       }
       let imgs = document.querySelectorAll("#scenic");
       let links = document.querySelectorAll("#scenic_link");
-      for (let i = 0; i < links.length; ++i){
+      for (let i = 0; i < links.length; ++i) {
         imgs[i].src = scenic_locations[selected[i]].src;
         links[i].href = scenic_locations[selected[i]].href;
         imgs[i].alt = scenic_locations[selected[i]].alt;
@@ -130,15 +130,15 @@
     </div>
 
     <div class="world-map__images">
-      <a href="/" id="scenic_link"><img class="world-map__country-links"
-          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-      <a href="/" id="scenic_link"><img class="world-map__country-links"
-          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-      <a href="/" id="scenic_link"><img class="world-map__country-links"
-          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-      <a href="/" id="scenic_link"><img class="world-map__country-links"
-          src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-    
+      <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+          alt="Loading random locations" id="scenic"></a>
+      <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+          alt="Loading random locations" id="scenic"></a>
+      <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+          alt="Loading random locations" id="scenic"></a>
+      <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+          alt="Loading random locations" id="scenic"></a>
+
     </div>
     <div class="wrapper text-scroll-reveal">
       <h2 class="headline">Something something.</h2>
@@ -198,7 +198,8 @@
     data-link="#about-us-link">
     <div class="wrapper wrapper--no-padding-until-lg">
       <h2 class="section-title section-title--blue">
-        <img class="section-title__icon svg" src="../app/assets/images/icons/multiple-users-silhouette.svg"> About Us</h2>
+        <img class="section-title__icon svg" src="../app/assets/images/icons/multiple-users-silhouette.svg"> About Us
+      </h2>
 
       <div class="row row--gutters row--t-padding row--gutters-small row--equal-height-at-lg generic-content-container">
         <div class="row__large-3">
@@ -254,9 +255,12 @@
             </div>
             <h3 class="about-us__title">Ben</h3>
             <h3 class="about-us__subtitle">Senior at UMass Amherst</h3>
-            <p>Hello! My name is Ben Brennan and I'm a Computer Science major at UMass Amherst. I love web development, so 
-              this class has been really fun for me. I've had a passion for art for as long as I can remember, this is why
-              I belive I've enjoyed web deveopment so much. It combines two of my favorite things, programming and art. Outside
+            <p>Hello! My name is Ben Brennan and I'm a Computer Science major at UMass Amherst. I love web development,
+              so
+              this class has been really fun for me. I've had a passion for art for as long as I can remember, this is
+              why
+              I belive I've enjoyed web deveopment so much. It combines two of my favorite things, programming and art.
+              Outside
               of Comp Sci I love to draw, workout and play guitar. I hope you find this website useful!
             </p>
           </div>
@@ -272,7 +276,7 @@
     <form method="POST" action="send" id="email_form">
       <div id="center">
         <div id="name">
-          <label>Name: </label> <br>
+          <label>Name: </label><br>
           <input type="text" name="name" autocomplete="off">
         </div> <br>
         <div id="email">
@@ -280,22 +284,24 @@
           <input type="email" name="email" autocomplete="off">
         </div> <br>
         <div id="message">
-          <label>Message: </label> <br>
-          <textarea name="message"></textarea> 
-        </div> <br>
-        <button type="submit" class="btn">Send E-mail</button> 
+          <label>Message: </label> <br><br>
+          <textarea name="message"></textarea>
+        </div><br>
+        <button type="submit" class="btn">Send E-mail</button>
+
       </div>
     </form>
   </div>
 
   <footer class="footer">
     <div class="wrapper">
-      <p><span class="footer__text">&copy; Copyright Adam Tiago, Ben Brennan, Elise Symmes and Joe Maguire</span><!--<a href="#" class="btn btn--brown">Contact
-          Us</a>--></p>
+      <p><span class="footer__text">&copy; Copyright Adam Tiago, Ben Brennan, Elise Symmes and Joe Maguire</span>
+        <!--<a href="#" class="btn btn--brown">Contact
+          Us</a>-->
+      </p>
     </div>
   </footer>
   <script src="../app/temp/scripts/App.js"></script>
 </body>
 
 </html>
-
