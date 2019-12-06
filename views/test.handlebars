@@ -266,7 +266,7 @@
     </div>
   </div>
 
-  <div class="contact-us" class="page-section">
+  <div id="contact-us" class="contact-us" class="page-section">
     <h2>Contact Us</h2>
     <form method="POST" action="send" id="email_form">
       <div id="center">
@@ -282,13 +282,22 @@
           <label>Message: </label> <br>
           <textarea name="message"></textarea>
         </div> 
-        <button type="submit">Submit!</button>
+        <button type="submit" class="btn">Submit!</button>
       </div>
     </form>
   </div>
   <style id='contact-form'>
+    .contact-us {
+      background-color: #416870;
+      margin: auto;
+      padding: 20px 0;
+    }
     .contact-us h2 {
       text-align: center;
+      color: white;
+    }
+    .contact-us label {
+      color: white;
     }
     .contact-us #center {
       width: 100%;
@@ -304,12 +313,16 @@
       width: 200px;
       height: 100px;
     }
+    .contact-us button {
+      border: none;
+    }
+
   </style>
 
   <footer class="footer">
     <div class="wrapper">
-      <p><span class="footer__text">&copy; Copyright Adam Tiago, Ben Brennan, Elise Symmes and Joe Maguire</span><a href="#" class="btn btn--brown">Contact
-          Us</a></p>
+      <p><span class="footer__text">&copy; Copyright Adam Tiago, Ben Brennan, Elise Symmes and Joe Maguire</span><!--<a href="#" class="btn btn--brown">Contact
+          Us</a>--></p>
     </div>
   </footer>
   <script src="../app/temp/scripts/App.js"></script>

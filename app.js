@@ -54,9 +54,9 @@ app.post('/send', (req, res) => {
 
     // setup mail with unicode symbols
     let mailOptions = {
-        from: 'web-prog-proj <326webproject@gmail.com>',
-        to: 'ben15jman@gmail.com, elisesymmes@gmail.com, tiagosaurus@live.com, joemaguire19@gmail.com',
-        subject: 'Test', 
+        from: 'Your Travel Guide <326webproject@gmail.com>',
+        to: 'ben15jman@gmail.com', /*elisesymmes@gmail.com, tiagosaurus@live.com, joemaguire19@gmail.com',*/
+        subject: 'New Contact', 
         text: 'Hello World?',
         html: output
     };
@@ -69,7 +69,7 @@ app.post('/send', (req, res) => {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         res.render('test', {
-            mem: "Thanke you for your feedback!",
+            mem: "Thank you for your feedback!",
             layout: false,
         });
     });
