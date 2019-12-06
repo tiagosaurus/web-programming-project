@@ -75,8 +75,8 @@
                 <img id="flag" src="">
                 </div>
                 <li id="alpha3code" class="info-item">Three letter code: </li>
+                <li id="region-" class="info-item">Region: </li>
                 <li id="country-name" class="info-item">Country Name: </li>
-                <li id="region" class="info-item">Region: </li>
                 <li id="currency" class="info-item">Currency: </li>
                 <li id="population" class="info-item">Population: </li>
             </ul>
@@ -116,11 +116,12 @@
             const data = await response.json();
             document.getElementById('flag').src = data[0].flag;
             document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
+            document.getElementById('region-').innerHTML += data[0].region;
             document.getElementById('country-name').innerHTML += data[0].name;
-            document.getElementById('region').innerHTML += data[0].region;
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
-            document.getElementById('population').innerHTML += data[0].population;
+            document.getElementById('population').innerHTML += data[0].population + ' people';
             // this is just decreasong the flag size a bit, get rid of it if you want when doing real flag formatting
+            
         }
         getData();
 

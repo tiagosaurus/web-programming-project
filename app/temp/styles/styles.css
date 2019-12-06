@@ -1811,7 +1811,8 @@ img {
   .contact-us {
     background-color: #416870;
     margin: auto;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
   }
   .contact-us h2 {
     text-align: center;
@@ -1836,6 +1837,7 @@ img {
   }
   .contact-us button {
     border: none;
+    width: 200px;
   }
 
   #flag {
