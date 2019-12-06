@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const port = 8000;
-
+const fetch = require('node-fetch');
 
 // View engine setup
 app.engine('handlebars', exphbs());
@@ -21,9 +21,26 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.render("test", {
         layout: false,
-        mem: ""
+        mem: req.params.test
         });
 });
+
+app.get('/countries/:alpha3Code', async function(req, res) {
+    let url = 'https://restcountries.eu/rest/v2/alpha/' + req.params.alpha3Code
+    let country_name = await fetch(url).then(res => res.json()).then(json => json.name);
+    if (typeof country_name !== 'undefined'){
+        res.render('country', {
+            country_name: country_name,
+            layout: false,
+        });
+    }
+    else {
+        res.render('test', {
+            mem: "Sorry, " + req.params.alpha3Code + " is not a recognized country code.",
+            layout: false,
+        });
+    }
+})
 
 app.post('/send', (req, res) => {
     const output = `
