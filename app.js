@@ -6,6 +6,8 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const port = 8000;
 const fetch = require('node-fetch');
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('a198f94bdfc341ce8e05ee56ecaed13b');
 
 // View engine setup
 app.engine('handlebars', exphbs());
@@ -31,9 +33,31 @@ app.get('/countries/:alpha3Code', async function(req, res) {
     if (typeof country_data !== 'undefined'){
         let country_name = country_data.name
         let country_region = country_data.region
+        let news_data = await newsapi.v2.topHeadlines({
+            language: 'en',
+            country: country_data.alpha2Code
+          }).then(response => response);
+        news_pass = "Init$~$"
+        if (news_data.status = 'ok'){
+            if (news_data.totalResults == 0){
+                console.log("no news");
+            }
+            else if (news_data.totalResults < 3) {
+                var num_news = news_data.totalResults;
+            }
+            else var num_news = 3;
+            if (num_news > 1){
+                for (var i = 0; i < num_news; ++i){
+                    news_pass += news_data.articles[i].title + "$~$";
+                    news_pass += news_data.articles[i].url + "$~$";
+                    news_pass += news_data.articles[i].urlToImage + "$~$";
+                }
+            }
+        }
         res.render('country', {
             country_name: country_name,
             region: country_region,
+            news : news_pass,
             layout: false,
         });
     }

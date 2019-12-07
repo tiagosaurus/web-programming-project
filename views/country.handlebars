@@ -15,6 +15,20 @@
                 let picture = document.getElementById("region_image")
                 picture.innerHTML = '<source srcset="../app/assets/images/' + country_name + '--large.png 1920w, ../app/assets/images/' + country_name + '--large-hi-dpi.png 3840w" media="(min-width: 1380px"><source srcset="../app/assets/images/' + country_name + '--medium.png 1380w, ../app/assets/images/' + country_name + '--medium-hi-dpi.png 2760w" media="(min-width: 990px"><source srcset="../app/assets/images/' + country_name + '--small.png 992w, ../app/assets/images/' + country_name + '--small-hi-dpi.png 1984w" media="(min-width: 640px"><img srcset="../app/assets/images/' + country_name + '--smaller.png 640w, ../app/assets/images/' + country_name + '--smaller-hi-dpi.png 1280w" alt="world map focused on {{country_name}}" class="world-map__image">';
             }
+            let news_source = document.getElementById("news_source").innerHTML;
+            let news_data = news_source.split("$~$");
+            let titles = ["","",""];
+            let urls = ["","",""];
+            let images = ["","",""];
+            let num_news = (news_data.length - 2)/3;
+            for (var i = 0; i < num_news; ++i){
+                titles[i] = news_data[(i*3)+1];
+                urls[i] = news_data[(i*3)+2];
+                images[i] = news_data[(i*3)+3];
+            }
+            console.log(titles);
+            console.log(urls);
+            console.log(images);
         }
     </script>
 </head>
@@ -22,6 +36,7 @@
 <body>
     <div id="country_name" style="display: none;">{{country_name}}</div>
     <div id="region" style="display: none;">{{region}}</div>
+    <div id="news_source" style="display: none;">{{news}}</div>
     <header class="navbar">
         <div class="wrapper">
             <div class="navbar__logo">
@@ -85,6 +100,7 @@
     <div id="news" class="page-section page-section--blue" data-link="#news-link">
         <div class="wrapper">
             <h2 class="section-title">Current News</h2>
+            <div id="news_here"></div>
         </div>
     </div>
 
