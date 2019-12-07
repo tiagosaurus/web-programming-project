@@ -97,3 +97,23 @@ app.post('/send', (req, res) => {
 
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
+
+const MongoClient = require('mongodb').MongoClient;
+
+// replace the uri string with your connection string.
+const uri = "mongodb+srv://webprog-user:QmW3PgDnxTidPkq@cluster0-vmxfb.mongodb.net/test?retryWrites=true&w=majority";
+
+MongoClient.connect(uri, {useUnifiedTopology: true}, function(err, client) {
+   if(err) {
+        console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+   }
+   console.log('Connected...');
+   const countries = client.db("web-programming-project").collection("countries");
+   // perform actions on the collection object
+
+ countries.find({region: "Europe"}).toArray()
+   .then((data) => {console.log(data)})
+   .catch(err => {});
+
+   client.close();
+});
