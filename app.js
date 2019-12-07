@@ -22,13 +22,13 @@ app.get('/', (req, res) => {
     res.render("main", {
         layout: false,
         mem: req.params.main
-        });
+    });
 });
 
-app.get('/countries/:alpha3Code', async function(req, res) {
+app.get('/countries/:alpha3Code', async function (req, res) {
     let url = 'https://restcountries.eu/rest/v2/alpha/' + req.params.alpha3Code
     let country_data = await fetch(url).then(res => res.json()).then(json => json);
-    if (typeof country_data !== 'undefined'){
+    if (typeof country_data !== 'undefined') {
         let country_name = country_data.name
         let country_region = country_data.region
         res.render('country', {
@@ -64,10 +64,10 @@ app.post('/send', (req, res) => {
         // secure: false, // true for 465, false for other ports
         service: 'gmail',
         auth: {
-          user: '326webproject@gmail.com', // generated ethereal user
-          pass: 'forCloud' // generated ethereal password
+            user: '326webproject@gmail.com', // generated ethereal user
+            pass: 'forCloud' // generated ethereal password
         },
-        tls:{
+        tls: {
             rejectUnauthorized: false
         }
     });
@@ -76,7 +76,7 @@ app.post('/send', (req, res) => {
     let mailOptions = {
         from: 'Your Travel Guide <326webproject@gmail.com>',
         to: 'ben15jman@gmail.com', /*elisesymmes@gmail.com, tiagosaurus@live.com, joemaguire19@gmail.com',*/
-        subject: 'New Contact', 
+        subject: 'New Contact',
         text: 'Hello World?',
         html: output
     };
@@ -97,3 +97,41 @@ app.post('/send', (req, res) => {
 
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
+
+const MongoClient = require('mongodb').MongoClient;
+
+// replace the uri string with your connection string.
+const uri = "mongodb+srv://webprog-user:QmW3PgDnxTidPkq@cluster0-vmxfb.mongodb.net/test?retryWrites=true&w=majority";
+
+MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
+    if (err) {
+        console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
+    }
+    console.log('Connected...');
+    const countries = client.db("web-programming-project").collection("countries");
+    // perform actions on the collection object
+
+    countries.find({ region: "Europe" }).toArray()
+        .then((data) => { })
+        .catch(err => { });
+
+    let europe = [],
+        oceania = [],
+        asia = [],
+        americas = [],
+        africa = [];
+
+
+    countries.find({ region: "Europe" }).forEach(function (u) { europe.push(u.name) })
+        .then((data) => { console.log(europe) });
+    countries.find({ region: "Oceania" }).forEach(function (u) { oceania.push(u.name) })
+        .then((data) => { console.log(oceania) });
+    countries.find({ region: "Asia" }).forEach(function (u) { asia.push(u.name) })
+        .then((data) => { console.log(asia) });
+    countries.find({ region: "Americas" }).forEach(function (u) { americas.push(u.name) })
+        .then((data) => { console.log(americas) });
+    countries.find({ region: "Africa" }).forEach(function (u) { africa.push(u.name) })
+        .then((data) => { console.log(africa) });
+
+    client.close();
+});
