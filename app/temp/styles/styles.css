@@ -1887,6 +1887,8 @@ img {
   width: 300px;
   height: 200px;
   padding: 8px 8px 8px 10px;
+  border-radius: 10%;
+  opacity: 0.7;
 
 }
 
@@ -1896,4 +1898,26 @@ img {
   color: #FFF;
   font-size: 1.2rem;
 
+}
+
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.trending-container {
+  display: inline-block;
+  background-color: orange;
+}
+
+.trending-pictures {
+  text-align: center;
+  padding: 8px 8px 8px 10px;
 }

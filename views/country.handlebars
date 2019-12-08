@@ -17,32 +17,32 @@
             }
             let news_source = document.getElementById("news_source").innerHTML;
             let news_data = news_source.split("$~$");
-            let titles = ["","",""];
-            let urls = ["","",""];
-            let images = ["","",""];
-            let num_news = (news_data.length - 2)/3;
+            let titles = ["", "", ""];
+            let urls = ["", "", ""];
+            let images = ["", "", ""];
+            let num_news = (news_data.length - 2) / 3;
             let titles_items = document.querySelectorAll("#news_title");
             let hrefs_items = document.querySelectorAll("#news_link");
             let image_items = document.querySelectorAll("#news_image");
-            for (var i = 0; i < num_news; ++i){
-                titles[i] = news_data[(i*3)+1];
+            for (var i = 0; i < num_news; ++i) {
+                titles[i] = news_data[(i * 3) + 1];
                 titles_items[i].innerHTML = titles[i];
-                urls[i] = news_data[(i*3)+2];
+                urls[i] = news_data[(i * 3) + 2];
                 hrefs_items[i].href = urls[i];
-                images[i] = news_data[(i*3)+3];
+                images[i] = news_data[(i * 3) + 3];
                 image_items[i].src = images[i];
             }
             let yt_link = document.getElementById("yt_link");
             let trends24_link = document.getElementById("trends24_link");
             let name_split = country_name.split(" ");
             let yt_url = "https://www.youtube.com/results?search_query=Popular+on+YouTube+-";
-            for (word in name_split){
+            for (word in name_split) {
                 yt_url += "+" + name_split[word];
             }
             yt_url += "+channel";
             yt_link.href = yt_url;
             let trends_url = "https://trends24.in/" + name_split[0].toLowerCase();
-            for (var i = 1; i < name_split.length; ++i){
+            for (var i = 1; i < name_split.length; ++i) {
                 trends_url += "-" + name_split[i].toLowerCase();
             }
             trends_url += "/";
@@ -133,25 +133,39 @@
     <div id="news" class="page-section page-section--blue" data-link="#news-link">
         <div class="wrapper">
             <h2 class="section-title">Current News</h2>
+            <h3 class="text-center">Powered by News API</h3>
             <div id="news_here">
-                <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
-                <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
-                <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                <a href="/" target="_blank" id="news_link" class="news-links">
+                    <div id="news_title"></div>
+                </a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
+                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                <a href="/" target="_blank" id="news_link" class="news-links">
+                    <div id="news_title"></div>
+                </a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
+                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                <a href="/" target="_blank" id="news_link" class="news-links">
+                    <div id="news_title"></div>
+                </a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
+                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
             </div>
-            <footer>Powered by News API</footer>
         </div>
     </div>
 
     <div id="trending" class="page-section" data-link="#trending-link">
         <div class="wrapper">
             <h2 class="section-title section-title--blue">What's Trending?</h2>
-            <a href="https://www.youtube.com" id="yt_link">Youtube Link</a>
-            <a href="https://www.trends24.in" id="trends24_link">Trends24 Link</a>
-            {{!-- {{Youtube Link}} --}}
-            {{!-- {{Trends24 Link}} --}}
+
+            <div class="text-center">
+                <div class="trending container">
+                                    <a target="_blank" href="https://www.youtube.com" id="yt_link"><img class="trending-pictures"
+                        src="../app/assets/images/youtube-cropped.png"></a>
+                                    <a target="_blank" href="https://www.trends24.in" id="trends24_link"><img class="trending-pictures"
+                        src="../app/assets/images/twitter-cropped.png"></a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -180,7 +194,7 @@
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
             document.getElementById('population').innerHTML += data[0].population + ' people';
             // this is just decreasong the flag size a bit, get rid of it if you want when doing real flag formatting
-            
+
         }
         getData();
 
