@@ -32,6 +32,21 @@
                 images[i] = news_data[(i*3)+3];
                 image_items[i].src = images[i];
             }
+            let yt_link = document.getElementById("yt_link");
+            let trends24_link = document.getElementById("trends24_link");
+            let name_split = country_name.split(" ");
+            let yt_url = "https://www.youtube.com/results?search_query=Popular+on+YouTube+-";
+            for (word in name_split){
+                yt_url += "+" + name_split[word];
+            }
+            yt_url += "+channel";
+            yt_link.href = yt_url;
+            let trends_url = "https://trends24.in/" + name_split[0].toLowerCase();
+            for (var i = 1; i < name_split.length; ++i){
+                trends_url += "-" + name_split[i].toLowerCase();
+            }
+            trends_url += "/";
+            trends24_link.href = trends_url;
         }
     </script>
 </head>
@@ -88,16 +103,29 @@
     <div id="basic-info" class="page-section" data-link="#basic-link">
         <div class="wrapper">
             <h2 class="section-title section-title--blue">Basic Information</h2>
-            <ul class="info-list">
-                <div class="info-item-flag">
+            <div class="info-item-flag">
                 <img id="flag" src="">
-                </div>
-                <li id="alpha3code" class="info-item">Three letter code: </li>
-                <li id="region-" class="info-item">Region: </li>
-                <li id="country-name" class="info-item">Country Name: </li>
-                <li id="currency" class="info-item">Currency: </li>
-                <li id="population" class="info-item">Population: </li>
-            </ul>
+            </div>
+            <div class="row__large-4">
+                <ul class="about-us__title info-item">
+                    <li id="region-">Region: </li>
+                    <li id="subregion">Sub-Region: </li>
+                    <li id="language--">Language: </li>
+                </ul>
+            </div>
+            <div class="row__large-4">
+                <ul class="about-us__title info-item">
+                    <li id="country-name">Name: </li>
+                    <li id="capital">Capital: </li>
+                    <li id="alpha3code">3-Letter code: </li>
+                </ul>
+            </div>
+            <div class="row__large-4">
+                <ul class="about-us__title info-item">
+                    <li id="currency">Currency: </li>
+                    <li id="area">Area: </li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -107,18 +135,23 @@
             <h2 class="section-title">Current News</h2>
             <div id="news_here">
                 <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
-                <img id="news_image" src="../app/assets/images/breaking-news-cropped.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
                 <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
                 <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
                 <a href="/" target="_blank" id="news_link" class="news-links"><div id="news_title"></div></a>
                 <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
             </div>
+            <footer>Powered by News API</footer>
         </div>
     </div>
 
     <div id="trending" class="page-section" data-link="#trending-link">
         <div class="wrapper">
             <h2 class="section-title section-title--blue">What's Trending?</h2>
+            <a href="https://www.youtube.com" id="yt_link">Youtube Link</a>
+            <a href="https://www.trends24.in" id="trends24_link">Trends24 Link</a>
+            {{!-- {{Youtube Link}} --}}
+            {{!-- {{Trends24 Link}} --}}
         </div>
     </div>
 
