@@ -109,7 +109,7 @@
             <div class="row__large-4">
                 <ul class="about-us__title info-item">
                     <li id="region-">Region: </li>
-                    <li id="subregion">Sub-Region: </li>
+                    <li id="subregion-li">Sub-Region: </li>
                     <li id="language--">Language: </li>
                 </ul>
             </div>
@@ -124,6 +124,7 @@
                 <ul class="about-us__title info-item">
                     <li id="currency">Currency: </li>
                     <li id="area">Area: </li>
+                    <li id="population">Population: </li>
                 </ul>
             </div>
         </div>
@@ -173,12 +174,18 @@
             const data_url = url + country_name;
             const response = await fetch(data_url);
             const data = await response.json();
+            console.log(data);
             document.getElementById('flag').src = data[0].flag;
             document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
             document.getElementById('region-').innerHTML += data[0].region;
             document.getElementById('country-name').innerHTML += data[0].name;
             document.getElementById('currency').innerHTML += data[0].currencies[0].name;
             document.getElementById('population').innerHTML += data[0].population + ' people';
+            document.getElementById('subregion-li').innerHTML += data[0].subregion;
+            document.getElementById('language--').innerHTML += data[0].languages[0].name;
+            document.getElementById('capital').innerHTML += data[0].capital;
+            document.getElementById('area').innerHTML += data[0].area;
+            
             
         }
         getData();
