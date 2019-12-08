@@ -136,21 +136,34 @@
             <h2 class="section-title">Current News</h2>
             <h3 class="text-center">Powered by News API</h3>
             <div id="news_here">
-                <a href="/" target="_blank" id="news_link" class="news-links">
-                    <div id="news_title"></div>
-                </a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
-                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
-                <a href="/" target="_blank" id="news_link" class="news-links">
-                    <div id="news_title"></div>
-                </a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
-                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
-                <a href="/" target="_blank" id="news_link" class="news-links">
-                    <div id="news_title"></div>
-                </a>
-                <img id="news_image" src="../app/assets/images/placeholder.jpg" class="news-image"
-                    onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                <div class="text-center">
+                    <div class="trending container">
+                        <a href="https://www.cnn.com/world" target="_blank" id="news_link" class="news-links">
+                            <div id="news_title"></div>
+                            <img id="news_image" src="../app/assets/images/cnn-cropped.jpg" class="news-image"
+                                onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="trending container">
+                        <a href="https://www.reuters.com/news/world" target="_blank" id="news_link" class="news-links">
+                            <div id="news_title"></div>
+                            <img id="news_image" src="../app/assets/images/reuters-cropped.jpg" class="news-image"
+                                onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="trending container">
+
+                        <a href="https://apnews.com/" target="_blank" id="news_link" class="news-links">
+                            <div id="news_title"></div>
+                            <img id="news_image" src="../app/assets/images/associated-press-cropped.png"
+                                class="news-image" onerror="this.src='../app/assets/images/breaking-news-cropped.jpg'">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -161,10 +174,10 @@
 
             <div class="text-center">
                 <div class="trending container">
-                                    <a target="_blank" href="https://www.youtube.com" id="yt_link"><img class="trending-pictures"
-                        src="../app/assets/images/youtube-cropped.png"></a>
-                                    <a target="_blank" href="https://www.trends24.in" id="trends24_link"><img class="trending-pictures"
-                        src="../app/assets/images/twitter-cropped.png"></a>
+                    <a target="_blank" href="https://www.youtube.com" id="yt_link"><img class="trending-pictures"
+                            src="../app/assets/images/youtube-cropped.png"></a>
+                    <a target="_blank" href="https://www.trends24.in" id="trends24_link"><img class="trending-pictures"
+                            src="../app/assets/images/twitter-cropped.png"></a>
                 </div>
             </div>
         </div>
@@ -199,7 +212,7 @@
             document.getElementById('language--').innerHTML += data[0].languages[0].name;
             document.getElementById('capital').innerHTML += data[0].capital;
             document.getElementById('area').innerHTML += data[0].area;
-         
+
         }
         getData();
 
