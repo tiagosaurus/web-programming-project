@@ -1878,20 +1878,7 @@ img {
 
   .info-item {
     list-style-type: none;
-    font-weight: 100;
-    color: #416870;
-    font-size: 1.1rem;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
-    max-width: 30rem;
   }
-
-  @media (min-width: 530px) {
-
-    .info-item {
-                font-size: 1.875rem
-    
-        }
-        }
 
 .news-image {
   display: block;
@@ -1908,4 +1895,5 @@ img {
   text-align: center;
   color: #FFF;
   font-size: 1.2rem;
+
 }
