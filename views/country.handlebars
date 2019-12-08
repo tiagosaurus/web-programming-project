@@ -15,6 +15,23 @@
                 let picture = document.getElementById("region_image")
                 picture.innerHTML = '<source srcset="../app/assets/images/' + country_name + '--large.png 1920w, ../app/assets/images/' + country_name + '--large-hi-dpi.png 3840w" media="(min-width: 1380px"><source srcset="../app/assets/images/' + country_name + '--medium.png 1380w, ../app/assets/images/' + country_name + '--medium-hi-dpi.png 2760w" media="(min-width: 990px"><source srcset="../app/assets/images/' + country_name + '--small.png 992w, ../app/assets/images/' + country_name + '--small-hi-dpi.png 1984w" media="(min-width: 640px"><img srcset="../app/assets/images/' + country_name + '--smaller.png 640w, ../app/assets/images/' + country_name + '--smaller-hi-dpi.png 1280w" alt="world map focused on {{country_name}}" class="world-map__image">';
             }
+            let news_source = document.getElementById("news_source").innerHTML;
+            let news_data = news_source.split("$~$");
+            let titles = ["","",""];
+            let urls = ["","",""];
+            let images = ["","",""];
+            let num_news = (news_data.length - 2)/3;
+            let titles_items = document.querySelectorAll("#news_title");
+            let hrefs_items = document.querySelectorAll("#news_link");
+            let image_items = document.querySelectorAll("#news_image");
+            for (var i = 0; i < num_news; ++i){
+                titles[i] = news_data[(i*3)+1];
+                titles_items[i].innerHTML = titles[i];
+                urls[i] = news_data[(i*3)+2];
+                hrefs_items[i].href = urls[i];
+                images[i] = news_data[(i*3)+3];
+                image_items[i].src = images[i];
+            }
         }
     </script>
 </head>
@@ -22,6 +39,7 @@
 <body>
     <div id="country_name" style="display: none;">{{country_name}}</div>
     <div id="region" style="display: none;">{{region}}</div>
+    <div id="news_source" style="display: none;">{{news}}</div>
     <header class="navbar">
         <div class="wrapper">
             <div class="navbar__logo">
@@ -87,6 +105,14 @@
     <div id="news" class="page-section page-section--blue" data-link="#news-link">
         <div class="wrapper">
             <h2 class="section-title">Current News</h2>
+            <div id="news_here">
+                <a href="/" id="news_link"><div id="news_title"></div></a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg">
+                <a href="/" id="news_link"><div id="news_title"></div></a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg">
+                <a href="/" id="news_link"><div id="news_title"></div></a>
+                <img id="news_image" src="../app/assets/images/placeholder.jpg">
+            </div>
         </div>
     </div>
 
