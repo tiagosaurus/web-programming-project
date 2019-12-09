@@ -186,6 +186,228 @@
     <div id="weather" class="page-section page-section--blue" data-link="#weather-link">
         <div class="wrapper">
             <h2 class="section-title">Weather</h2>
+            <script>
+
+                let capitalCity = "Boston";
+
+                window.addEventListener("DOMContentLoaded", domLoaded);
+
+                function domLoaded() {
+                    if(window.addEventListener) {
+                        window.addEventListener("load",loadWeather,false);
+                    } 
+                    else {
+                        window.attachEvent("onload",loadWeather);
+                    }
+                   // window.addEventListener("load", loadWeather);
+                }
+
+
+                // Called when page is loaded
+                function loadWeather() {
+                    // Get user input
+                    const city1 = capitalCity;
+
+                    // Show error messages if city fields left blank
+                    if (city1.length === 0) {
+                        showElement("error-value-city1");
+                    }
+                    
+
+                    // Ensure city name is provided
+                    if (city1.length > 0 ) {
+                        showElement("forecast");
+                        hideElement("error-loading-city1");
+                        //showElement("loading-city1");
+                        //showText("loading-city1", `Loading ${city1}...`);
+                        hideElement("results-city1");
+
+                        // Fetch forecasts
+                        getWeatherForecast(city1, "city1");
+                    }
+                }
+
+                // Display the text in the element
+                function showText(elementId, text) {
+                    document.getElementById(elementId).innerHTML = text;
+                }
+
+                // Show the element
+                function showElement(elementId) {
+                    document.getElementById(elementId).classList.remove("hidden");
+                }
+
+                // Hide the element
+                function hideElement(elementId) {
+                    document.getElementById(elementId).classList.add("hidden");
+                }
+
+                // Request this city's forecast
+                function getWeatherForecast(city, cityId) {
+                    // Create a URL to access the web API
+                    const endpoint = "https://api.openweathermap.org/data/2.5/forecast";
+                    const apiKey = "2e1f1d13b8f1a04c6da44730f7f9ab22";
+                    const queryString = `q=${encodeURI(city)}&units=imperial&appid=${apiKey}`;
+                    const url = `${endpoint}?${queryString}`;
+
+                    // Use XMLHttpRequest to make http request to web API
+                    const xhr = new XMLHttpRequest();
+
+                    // Call responseReceived() when response is received 
+                    xhr.addEventListener("load", function () {
+                        responseReceived(xhr, cityId, city)
+                    });
+
+                    // JSON response needs to be converted into an object
+                    xhr.responseType = "json";
+
+                    // Send request
+                    xhr.open("GET", url);
+                    xhr.send();
+                }
+
+                // Display forecast recevied from JSON  
+                function responseReceived(xhr, cityId, city) {
+                    
+                    // 200 status indicates forecast successfully received
+                    if (xhr.status === 200) {
+                        showElement("results-" + cityId);
+
+                        const cityName = xhr.response.city.name;
+                        showText(cityId + "-name", cityName);
+
+                        // Get 5 day forecast
+                        const forecast = getSummaryForecast(xhr.response.list);
+
+                        // Put forecast into the city's table
+                        let day = 1;
+                        for (const date in forecast) {
+                            // Only process the first 5 days
+                            if (day <= 5) {
+                            showText(`${cityId}-day${day}-name`, getDayName(date));
+                            showText(`${cityId}-day${day}-high`, Math.round(forecast[date].high) + "&deg;");
+                            showText(`${cityId}-day${day}-low`, Math.round(forecast[date].low) + "&deg;");
+                            showImage(`${cityId}-day${day}-image`, forecast[date].weather);
+                            }
+                            day++;
+                        }
+                    } else {
+                        // Display appropriate error message
+                        const errorId = "error-loading-" + cityId;
+                        showElement(errorId);
+                        showText(errorId, `Unable to load city "${city}".`);
+                    }
+                }
+
+                // Convert date string into Mon, Tue, etc.
+                function getDayName(dateStr) {
+                    const date = new Date(dateStr);
+                    return date.toLocaleDateString("en-US", { weekday: 'short', timeZone: 'UTC' });
+                }
+
+                // Show the weather image that matches the weatherType
+                function showImage(elementId, weatherType) {   
+                    // Images for various weather types
+                    const weatherImages = {
+                        Clear: "clear.png",
+                        Clouds: "clouds.png",
+                        Drizzle: "drizzle.png",
+                        Mist: "mist.png",
+                        Rain: "rain.png",
+                        Snow: "snow.png"
+                    };
+
+                    const imgUrl = "https://s3-us-west-2.amazonaws.com/static-resources.zybooks.com/";
+                    const img = document.getElementById(elementId);
+                    img.src = imgUrl + weatherImages[weatherType];
+                    img.alt = weatherType;
+                    //var skycons = new Skycons({"color": "#FFFAFF"});
+                    //skycons.add(elementId, Skycons.weatherImages[weatherType]);
+                    //skycons.play();
+
+                }
+
+                // Return a map of objects that contain the high temp, low temp, and weather for the next 5 days
+                function getSummaryForecast(forecastList) {  
+                    // Map for storing high, low, weather
+                    const forecast = [];
+                    
+                    // Determine high and low for each day
+                    forecastList.forEach(function (item) {
+                        // Extract just the yyyy-mm-dd 
+                        const date = item.dt_txt.substr(0, 10);
+                        
+                        // Extract temperature
+                        const temp = item.main.temp;
+
+                        // Has this date been seen before?
+                        if (date in forecast) {         
+                            // Determine if the temperature is a new low or high
+                            if (temp < forecast[date].low) {
+                            forecast[date].low = temp;
+                            }
+                            if (temp > forecast[date].high) {
+                            forecast[date].high = temp;
+                            }
+                        }
+                        else {
+                            // Initialize new forecast
+                            const temps = {
+                            high: temp,
+                            low: temp,
+                            weather: item.weather[0].main
+                            }   
+                            
+                            // Add entry to map 
+                            forecast[date] = temps;
+                        }
+                    });
+                    
+                    return forecast;
+                }
+
+                loadWeather();
+
+            </script>
+
+            <section id="forecast" class="hidden">
+                <h2>5 Day Forecast</h2>
+
+                <p id="error-loading-city1" class="error-msg"></p>
+                <table id="results-city1">
+                    <caption id="city1-name"></caption>
+                    <tr>
+                    <td id="city1-day1-name"></td>
+                    <td id="city1-day2-name"></td>
+                    <td id="city1-day3-name"></td>
+                    <td id="city1-day4-name"></td>
+                    <td id="city1-day5-name"></td>
+                    </tr>
+                    <tr>
+                    <td id="city1-day1-high"></td>
+                    <td id="city1-day2-high"></td>
+                    <td id="city1-day3-high"></td>
+                    <td id="city1-day4-high"></td>
+                    <td id="city1-day5-high"></td>
+                    </tr>
+                    <tr>
+                    <td id="city1-day1-low"></td>
+                    <td id="city1-day2-low"></td>
+                    <td id="city1-day3-low"></td>
+                    <td id="city1-day4-low"></td>
+                    <td id="city1-day5-low"></td>
+                    </tr>
+                    <tr>
+                    <td><img id="city1-day1-image"></td>
+                    <td><img id="city1-day2-image"></td>
+                    <td><img id="city1-day3-image"></td>
+                    <td><img id="city1-day4-image"></td>
+                    <td><img id="city1-day5-image"></td>
+                    </tr>
+                </table>
+
+            </section>
+
         </div>
     </div>
 
