@@ -186,9 +186,74 @@
     <div id="weather" class="page-section page-section--blue" data-link="#weather-link">
         <div class="wrapper">
             <h2 class="section-title">Weather</h2>
-            <script>
 
-                let capitalCity = "Boston";
+            <section id="forecast" class="hidden">
+                <h2>5 Day Forecast</h2>
+
+                <p id="error-loading-city1" class="error-msg"></p>
+                <table id="results-city1">
+                    <caption id="city1-name"></caption>
+                    <tr>
+                    <td id="city1-day1-name"></td>
+                    <td id="city1-day2-name"></td>
+                    <td id="city1-day3-name"></td>
+                    <td id="city1-day4-name"></td>
+                    <td id="city1-day5-name"></td>
+                    </tr>
+                    <tr>
+                    <td id="city1-day1-high"></td>
+                    <td id="city1-day2-high"></td>
+                    <td id="city1-day3-high"></td>
+                    <td id="city1-day4-high"></td>
+                    <td id="city1-day5-high"></td>
+                    </tr>
+                    <tr>
+                    <td id="city1-day1-low"></td>
+                    <td id="city1-day2-low"></td>
+                    <td id="city1-day3-low"></td>
+                    <td id="city1-day4-low"></td>
+                    <td id="city1-day5-low"></td>
+                    </tr>
+                    <tr>
+                    <td><img id="city1-day1-image"></td>
+                    <td><img id="city1-day2-image"></td>
+                    <td><img id="city1-day3-image"></td>
+                    <td><img id="city1-day4-image"></td>
+                    <td><img id="city1-day5-image"></td>
+                    </tr>
+                </table>
+
+            </section>
+
+        </div>
+    </div>
+
+
+    <footer>
+
+    </footer>
+    <script src="../app/temp/scripts/App.js"></script>
+    <script>
+        const url = 'https://restcountries.eu/rest/v2/name/'
+        async function getData() {
+            let country_name = document.getElementById("country_name").innerHTML;
+            const data_url = url + country_name;
+            const response = await fetch(data_url);
+            const data = await response.json();
+            console.log(data);
+            document.getElementById('flag').src = data[0].flag;
+            document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
+            document.getElementById('region-').innerHTML += data[0].region;
+            document.getElementById('country-name').innerHTML += data[0].name;
+            document.getElementById('currency').innerHTML += data[0].currencies[0].name;
+            document.getElementById('population').innerHTML += data[0].population + ' people';
+            document.getElementById('subregion-li').innerHTML += data[0].subregion;
+            document.getElementById('language--').innerHTML += data[0].languages[0].name;
+            document.getElementById('capital').innerHTML += data[0].capital;
+            document.getElementById('area').innerHTML += data[0].area;
+
+            let capitalCity = data[0].capital;
+                //let capitalCity = data2[0].capital;
 
                 window.addEventListener("DOMContentLoaded", domLoaded);
 
@@ -240,7 +305,7 @@
                 // Hide the element
                 function hideElement(elementId) {
                     document.getElementById(elementId).classList.add("hidden");
-                }
+                } 
 
                 // Request this city's forecast
                 function getWeatherForecast(city, cityId) {
@@ -367,73 +432,6 @@
                 }
 
                 loadWeather();
-
-            </script>
-
-            <section id="forecast" class="hidden">
-                <h2>5 Day Forecast</h2>
-
-                <p id="error-loading-city1" class="error-msg"></p>
-                <table id="results-city1">
-                    <caption id="city1-name"></caption>
-                    <tr>
-                    <td id="city1-day1-name"></td>
-                    <td id="city1-day2-name"></td>
-                    <td id="city1-day3-name"></td>
-                    <td id="city1-day4-name"></td>
-                    <td id="city1-day5-name"></td>
-                    </tr>
-                    <tr>
-                    <td id="city1-day1-high"></td>
-                    <td id="city1-day2-high"></td>
-                    <td id="city1-day3-high"></td>
-                    <td id="city1-day4-high"></td>
-                    <td id="city1-day5-high"></td>
-                    </tr>
-                    <tr>
-                    <td id="city1-day1-low"></td>
-                    <td id="city1-day2-low"></td>
-                    <td id="city1-day3-low"></td>
-                    <td id="city1-day4-low"></td>
-                    <td id="city1-day5-low"></td>
-                    </tr>
-                    <tr>
-                    <td><img id="city1-day1-image"></td>
-                    <td><img id="city1-day2-image"></td>
-                    <td><img id="city1-day3-image"></td>
-                    <td><img id="city1-day4-image"></td>
-                    <td><img id="city1-day5-image"></td>
-                    </tr>
-                </table>
-
-            </section>
-
-        </div>
-    </div>
-
-
-    <footer>
-
-    </footer>
-    <script src="../app/temp/scripts/App.js"></script>
-    <script>
-        const url = 'https://restcountries.eu/rest/v2/name/'
-        async function getData() {
-            let country_name = document.getElementById("country_name").innerHTML;
-            const data_url = url + country_name;
-            const response = await fetch(data_url);
-            const data = await response.json();
-            console.log(data);
-            document.getElementById('flag').src = data[0].flag;
-            document.getElementById('alpha3code').innerHTML += data[0].alpha3Code;
-            document.getElementById('region-').innerHTML += data[0].region;
-            document.getElementById('country-name').innerHTML += data[0].name;
-            document.getElementById('currency').innerHTML += data[0].currencies[0].name;
-            document.getElementById('population').innerHTML += data[0].population + ' people';
-            document.getElementById('subregion-li').innerHTML += data[0].subregion;
-            document.getElementById('language--').innerHTML += data[0].languages[0].name;
-            document.getElementById('capital').innerHTML += data[0].capital;
-            document.getElementById('area').innerHTML += data[0].area;
 
         }
         getData();
