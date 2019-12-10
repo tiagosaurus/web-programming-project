@@ -15,7 +15,7 @@ Travel Guide - provide users with the ability to select a country/area and provi
 ### Installation Instructions:
 - Step 1: In your command line, run "git clone" with the link of the repository provided on GitHub.
     <!-- <img src="./readme images/step 1.png" alt="step 1"> -->
-    ![step 1](https://github.com/tiagosaurus/web-programming-project/blob/master/readme_images/step_2.PNG)
+    ![step 1](https://github.com/tiagosaurus/web-programming-project/blob/master/readme_images/step_1.PNG)
 - Step 2: In the directory that you cloned the repository, run "npm install" to ensure that you have the necessary dependencies.
     <!-- <img src="./readme images/step 1.png" alt="step 2"> -->
     ![step 1](https://github.com/tiagosaurus/web-programming-project/blob/master/readme_images/step_2.PNG)
