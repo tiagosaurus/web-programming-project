@@ -40,7 +40,7 @@
                 image_items[i].src = images[i];
             }
 
-            //Populate Trending Section
+            //Get Trending Section Link
             let yt_link = document.getElementById("yt_link");
             let trends24_link = document.getElementById("trends24_link");
             let name_split = country_name.split(" ");
@@ -56,6 +56,24 @@
             }
             trends_url += "/";
             trends24_link.href = trends_url;
+
+            //Get Travel Advisory Link
+            let advisory_link = document.getElementById("advisory_link");
+            let countryNameLower = country_name.toLowerCase();
+            let name_split2 = countryNameLower.split(" ");
+            let advisory_url = "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/";
+            var firstCheck = true;
+            for (word in name_split2) {
+                if(firstCheck){
+                    advisory_url += name_split2[word]
+                    firstCheck = false;
+                }
+                else{
+                    advisory_url += "-" + name_split2[word];
+                }
+            } 
+            advisory_url += "-travel-advisory.html"
+            advisory_link.href = advisory_url;
         }
     </script>
 </head>
@@ -236,6 +254,21 @@
 
             </section>
 
+        </div>
+    </div>
+
+    <div id="advisory" class="page-section" data-link="#advisory-link">
+        <div class="wrapper">
+            <h2 class="section-title section-title--blue">Travel Advisory</h2>
+
+            <div class="text-center">
+                <div class="advisory container">
+                    <a target="_blank" href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/" 
+                            id="advisory_link"><img class="advisory-pictures"
+                            src="../app/assets/images/U.S._Department_of_State_official_seal.svg.png">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
