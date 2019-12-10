@@ -1923,7 +1923,7 @@ img {
 .modal {
   position: fixed;
   z-index: 5;
-  background-color: rgba(65, 104, 112, .88);
+  background-color: rgba(65, 104, 112, .95);
   top: 0;
   bottom: 0;
   left: 0;
@@ -1956,7 +1956,7 @@ img {
   transform-origin: 100% 0;
   color: white;
   cursor: pointer;
-  z-index: 11;
+  z-index: 5;
   visibility: hidden;
 }
 
@@ -1980,4 +1980,13 @@ img {
 
 .white {
  color: white;
+}
+
+.text-test {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.text-test2 {
+  font-size: 2rem;
 }
