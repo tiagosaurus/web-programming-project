@@ -1120,6 +1120,7 @@ img {
         list-style: none;
         padding-right: 8px;
         display: inline-block;
+        padding-bottom: 7px;
     }
 
 @media (min-width: 800px) {
