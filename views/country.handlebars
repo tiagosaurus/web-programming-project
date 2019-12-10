@@ -9,12 +9,19 @@
     <meta name="description" content="Find the current trending topics where you're traveling - know what's happening.">
     <link rel="stylesheet" href="../app/temp/styles/styles.css">
     <script>
+        //When page loads, populate sections
         window.onload = function () {
+
+            //Find country name for this page
             let country_name = document.getElementById("country_name").innerHTML;
+
+            //Populate map with correct region
             if (['Belgium', 'Germany', 'France', 'Italy', 'Portugal'].includes(country_name)) {
                 let picture = document.getElementById("region_image")
                 picture.innerHTML = '<source srcset="../app/assets/images/' + country_name + '--large.png 1920w, ../app/assets/images/' + country_name + '--large-hi-dpi.png 3840w" media="(min-width: 1380px"><source srcset="../app/assets/images/' + country_name + '--medium.png 1380w, ../app/assets/images/' + country_name + '--medium-hi-dpi.png 2760w" media="(min-width: 990px"><source srcset="../app/assets/images/' + country_name + '--small.png 992w, ../app/assets/images/' + country_name + '--small-hi-dpi.png 1984w" media="(min-width: 640px"><img srcset="../app/assets/images/' + country_name + '--smaller.png 640w, ../app/assets/images/' + country_name + '--smaller-hi-dpi.png 1280w" alt="world map focused on {{country_name}}" class="world-map__image">';
             }
+
+            //Populate news section from News API
             let news_source = document.getElementById("news_source").innerHTML;
             let news_data = news_source.split("$~$");
             let titles = ["", "", ""];
@@ -32,6 +39,8 @@
                 images[i] = news_data[(i * 3) + 3];
                 image_items[i].src = images[i];
             }
+
+            //Populate Trending Section
             let yt_link = document.getElementById("yt_link");
             let trends24_link = document.getElementById("trends24_link");
             let name_split = country_name.split(" ");
@@ -238,6 +247,8 @@
     <script>
         const url = 'https://restcountries.eu/rest/v2/name/'
         async function getData() {
+
+            //find data on country from restcountries API
             let country_name = document.getElementById("country_name").innerHTML;
             const data_url = url + country_name;
             const response = await fetch(data_url);
@@ -254,8 +265,10 @@
             document.getElementById('capital').innerHTML += data[0].capital;
             document.getElementById('area').innerHTML += data[0].area;
 
+            //capital city variable to be used with weather API
             let capitalCity = data[0].capital;
 
+            //start when page is loaded
             window.addEventListener("DOMContentLoaded", domLoaded);
 
             function domLoaded() {
@@ -425,6 +438,8 @@
 
             loadWeather();
         }
+
+        //Call the above getData function
         getData();
 
     </script>
