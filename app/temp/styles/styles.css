@@ -1829,10 +1829,10 @@ img {
     margin: 0 auto;
   }
   .contact-us input, textarea {
-    width: 200px;
+    width: 300px;
   }
   .contact-us textarea {
-    width: 200px;
+    width: 300px;
     height: 100px;
   }
   .contact-us button {
