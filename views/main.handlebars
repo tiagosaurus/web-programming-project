@@ -68,6 +68,24 @@
           optionGroup.appendChild(option, 0);
         });
         select.appendChild(optionGroup);
+        let star_wars_people = [
+        {"name": 'Wedge Antilles', "email": 'rogueleader@alliance.net'},
+        {"name": 'Kylo Ren', "email": 'No1VaderFan@hotmail.com'},
+        {"name": 'Chewbacca', "email": 'Rrrrrrhhhh@kashyyyk.org'},
+        {"name": 'Baby Yoda', "email": 'SimplyTheBest@mando.gov'},
+        {"name": 'Ahsoka Tano', "email": 'fulcrum@alliance.net'},
+        {"name": 'Wilhuff Tarkin', "email": 'imadethis@empire.net'},
+        {"name": 'John Smirth', "email": "JSmirth@email.biz"}
+        ];
+        let chosen_one = Math.floor(Math.random() * star_wars_people.length * 2);
+        if (chosen_one < star_wars_people.length){
+          document.getElementById("person_name").placeholder = star_wars_people[chosen_one].name;
+          document.getElementById("person_email").placeholder = star_wars_people[chosen_one].email;
+        }
+        else {
+          document.getElementById("person_name").placeholder = "John Smith";
+          document.getElementById("person_email").placeholder = "JSmith@email.com";
+        }
       }
     }</script>
 </head>
@@ -79,7 +97,6 @@
       <div class="navbar__menu-icon">
         <div class="navbar__menu-icon__middle"></div>
       </div>
-
       <div class="navbar__menu">
         <div class="navbar__btn-container"><a href="#contact-us" class="btn">Contact Us</a></div>
         <nav class="links">
@@ -224,14 +241,13 @@
         <div class="row__large-3">
           <div class="about-us">
             <div class="about-us__picture">
-              <img src="../app/assets/images/placeholder-3.png">
+              <img src="../app/assets/images/elise_profile.jpg">
             </div>
             <h3 class="about-us__title">Elise</h3>
-            <h3 class="about-us__subtitle">Something Something</h3>
-            <p>What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
-              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
-              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
-              What if the equable confusion ate the other? The psychedelic freedom forms into the miserable feedback.
+            <h3 class="about-us__subtitle">Senior at Umass Amherst</h3>
+            <p>I'm a last semester student at Umass Amherst majoring in Computer Science with a minor in Psychology. I enjoy the kind of puzzles proramming
+               presents and I really like when there's an opportunity to do some clever to gain efficiency or more options. Outside of computer science I 
+               enjoy spending time out in nature and playing tabletop games with friends.
             </p>
           </div>
         </div>
@@ -281,11 +297,11 @@
       <div id="center">
         <div id="name">
           <label>Name: </label><br>
-          <input type="text" name="name" autocomplete="off" placeholder="John Smith">
+          <input id="person_name" type="text" name="name" autocomplete="off" placeholder="">
         </div> <br>
         <div id="email">
           <label>Email: </label> <br>
-          <input type="email" name="email" autocomplete="off" placeholder="JSmith@email.com">
+          <input id="person_email" type="email" name="email" autocomplete="off" placeholder="">
         </div> <br>
         <div id="message">
           <label>Message: </label> <br><br>
