@@ -13,10 +13,10 @@
 Travel Guide - provide users with the ability to select a country/area and provide information with what is going on in specified area.
 
 ### Installation Instructions:
-Step 1: In your command line, run "git clone" with the link of the repository provided on GitHub.
-Step 2: In the directory that you cloned the repository, run "npm install" to ensure that you have the necessary dependencies.
-Step 3: You are now ready to run the application, do so with "node app.js".
-Step 4: Go to "localhost:8000" in your browser and enjoy the application.
+- Step 1: In your command line, run "git clone" with the link of the repository provided on GitHub.
+- Step 2: In the directory that you cloned the repository, run "npm install" to ensure that you have the necessary dependencies.
+- Step 3: You are now ready to run the application, do so with "node app.js".
+- Step 4: Go to "localhost:8000" in your browser and enjoy the application.
 
 <!--
 ### Other Ideas:
