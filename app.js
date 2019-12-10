@@ -99,7 +99,7 @@ app.post('/send', (req, res) => {
     // setup mail with unicode symbols
     let mailOptions = {
         from: 'Your Travel Guide <326webproject@gmail.com>',
-        to: 'ben15jman@gmail.com', /*elisesymmes@gmail.com, tiagosaurus@live.com, joemaguire19@gmail.com',*/
+        to: 'ben15jman@gmail.com, elisesymmes@gmail.com, tiagosaurus@live.com, joemaguire19@gmail.com',
         subject: 'New Contact',
         text: 'Hello World?',
         html: output
