@@ -135,6 +135,9 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
     const countries = client.db("web-programming-project").collection("countries");
     // perform actions on the collection object
 
+    /*
+
+    // Connects to database, gathers lists of countries
     countries.find({ region: "Europe" }).toArray()
         .then((data) => { })
         .catch(err => { });
@@ -145,7 +148,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
         americas = [],
         africa = [];
 
-
+    
     countries.find({ region: "Europe" }).forEach(function (u) { europe.push(u.name) })
         .then((data) => { console.log(europe) });
     countries.find({ region: "Oceania" }).forEach(function (u) { oceania.push(u.name) })
@@ -156,6 +159,6 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
         .then((data) => { console.log(americas) });
     countries.find({ region: "Africa" }).forEach(function (u) { africa.push(u.name) })
         .then((data) => { console.log(africa) });
-
+    */
     client.close();
 });
