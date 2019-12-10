@@ -13,6 +13,7 @@ new ScrollReveal($(".text-scroll-reveal"), "85%");
 new ScrollReveal($(".basic-info-items"), "85%");
 new ScrollReveal($(".trending"), "85%");
 new ScrollReveal($(".weather-items"), "85%");
+new ScrollReveal($(".travel-advisories"), "85%");
 
 
 new Navbar();  
