@@ -69,16 +69,16 @@
         });
         select.appendChild(optionGroup);
         let star_wars_people = [
-        {"name": 'Wedge Antilles', "email": 'rogueleader@alliance.net'},
-        {"name": 'Kylo Ren', "email": 'No1VaderFan@hotmail.com'},
-        {"name": 'Chewbacca', "email": 'Rrrrrrhhhh@kashyyyk.org'},
-        {"name": 'Baby Yoda', "email": 'SimplyTheBest@mando.gov'},
-        {"name": 'Ahsoka Tano', "email": 'fulcrum@alliance.net'},
-        {"name": 'Wilhuff Tarkin', "email": 'imadethis@empire.net'},
-        {"name": 'John Smirth', "email": "JSmirth@email.biz"}
+          { "name": 'Wedge Antilles', "email": 'rogueleader@alliance.net' },
+          { "name": 'Kylo Ren', "email": 'No1VaderFan@hotmail.com' },
+          { "name": 'Chewbacca', "email": 'Rrrrrrhhhh@kashyyyk.org' },
+          { "name": 'Baby Yoda', "email": 'SimplyTheBest@mando.gov' },
+          { "name": 'Ahsoka Tano', "email": 'fulcrum@alliance.net' },
+          { "name": 'Wilhuff Tarkin', "email": 'imadethis@empire.net' },
+          { "name": 'John Smirth', "email": "JSmirth@email.biz" }
         ];
         let chosen_one = Math.floor(Math.random() * star_wars_people.length * 2);
-        if (chosen_one < star_wars_people.length){
+        if (chosen_one < star_wars_people.length) {
           document.getElementById("person_name").placeholder = star_wars_people[chosen_one].name;
           document.getElementById("person_email").placeholder = star_wars_people[chosen_one].email;
         }
@@ -98,7 +98,7 @@
         <div class="navbar__menu-icon__middle"></div>
       </div>
       <div class="navbar__menu">
-        <div class="navbar__btn-container"><a href="#contact-us" class="btn">Contact Us</a></div>
+        <div class="navbar__btn-container"><a href="#contact-us" class="btn open-modal">Contact Us</a></div>
         <nav class="links">
           <ul class="navbar__list">
             <li class="navbar__li"><a href="#traveling" id="traveling-link">Where to Visit?</a></li>
@@ -147,14 +147,14 @@
     </div>
     <div class="text-center">
       <div class="trending container">
-          <a href="/" id="scenic_link"><img class="world-map__country-links"
-              src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-          <a href="/" id="scenic_link"><img class="world-map__country-links"
-              src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-          <a href="/" id="scenic_link"><img class="world-map__country-links"
-              src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
-          <a href="/" id="scenic_link"><img class="world-map__country-links"
-              src="../app/assets/images/placeholder.jpg  " alt="Loading random locations" id="scenic"></a>
+        <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+            alt="Loading random locations" id="scenic"></a>
+        <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+            alt="Loading random locations" id="scenic"></a>
+        <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+            alt="Loading random locations" id="scenic"></a>
+        <a href="/" id="scenic_link"><img class="world-map__country-links" src="../app/assets/images/placeholder.jpg  "
+            alt="Loading random locations" id="scenic"></a>
 
       </div>
     </div>
@@ -245,9 +245,11 @@
             </div>
             <h3 class="about-us__title">Elise</h3>
             <h3 class="about-us__subtitle">Senior at Umass Amherst</h3>
-            <p>I'm a last semester student at Umass Amherst majoring in Computer Science with a minor in Psychology. I enjoy the kind of puzzles proramming
-               presents and I really like when there's an opportunity to do some clever to gain efficiency or more options. Outside of computer science I 
-               enjoy spending time out in nature and playing tabletop games with friends.
+            <p>I'm a last semester student at Umass Amherst majoring in Computer Science with a minor in Psychology. I
+              enjoy the kind of puzzles proramming
+              presents and I really like when there's an opportunity to do some clever to gain efficiency or more
+              options. Outside of computer science I
+              enjoy spending time out in nature and playing tabletop games with friends.
             </p>
           </div>
         </div>
@@ -291,28 +293,6 @@
     </div>
   </div>
 
-  <div id="contact-us" class="contact-us" class="page-section">
-    <h2>Contact Us</h2>
-    <form method="POST" action="send" id="email_form">
-      <div id="center">
-        <div id="name">
-          <label>Name: </label><br>
-          <input id="person_name" type="text" name="name" autocomplete="off" placeholder="">
-        </div> <br>
-        <div id="email">
-          <label>Email: </label> <br>
-          <input id="person_email" type="email" name="email" autocomplete="off" placeholder="">
-        </div> <br>
-        <div id="message">
-          <label>Message: </label> <br><br>
-          <textarea name="message" placeholder="How can we help?"></textarea>
-        </div><br>
-        <button type="submit" class="btn">Send E-mail</button>
-
-      </div>
-    </form>
-  </div>
-
   <footer class="footer">
     <div class="wrapper">
       <p><span class="footer__text">&copy; Copyright Adam Tiago, Ben Brennan, Elise Symmes & Joe Maguire</span>
@@ -321,6 +301,32 @@
       </p>
     </div>
   </footer>
+    <div class="modal">
+      <h2 class="section-title white"><img src="../app/assets/images/icons/gmail.svg"
+          class="svg section-title__icon email_icon"> Contact Us</h2>
+      <p class="modal__description white">We'd love to hear from you on what you think about website! </p>
+      <div id="contact-us" class="contact-us" class="page-section">
+        <form method="POST" action="send" id="email_form">
+          <div id="center">
+            <div id="name">
+              <label>Name: </label><br>
+              <input id="person_name" type="text" name="name" autocomplete="off" placeholder="">
+            </div> <br>
+            <div id="email">
+              <label>Email: </label> <br>
+              <input id="person_email" type="email" name="email" autocomplete="off" placeholder="">
+            </div> <br>
+            <div id="message">
+              <label>Message: </label> <br><br>
+              <textarea name="message" placeholder="How can we help?"></textarea>
+            </div><br>
+            <button type="submit" class="btn">Send E-mail</button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="modal-close">X</div>
   <script src="../app/temp/scripts/App.js"></script>
 </body>
 

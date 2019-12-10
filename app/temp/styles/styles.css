@@ -1348,7 +1348,7 @@ img {
   position: absolute;
   left: -100000px;
   width: 100%;
-  z-index: 1051; }
+  z-index: 2; }
 
 .select2-results {
   display: block; }
@@ -1809,7 +1809,6 @@ img {
 
 
   .contact-us {
-    background-color: #416870;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -1919,4 +1918,66 @@ img {
 .trending-pictures {
   text-align: center;
   padding: 8px 8px 8px 10px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(65, 104, 112, .88);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  transition: all .3s ease-out;
+}
+
+.modal--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.modal__description {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.modal-close {
+  position: absolute;
+  font-size: 2rem;
+  top: 15px;
+  right: 15px;
+  transform: scaleX(1.2);
+  transform-origin: 100% 0;
+  color: white;
+  cursor: pointer;
+  z-index: 11;
+  visibility: hidden;
+}
+
+.modal-close--visible {
+  visibility: visible;
+}
+
+.modal__close:hover {
+  color: #495457;
+}
+
+.modal__inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+
+.email_icon {
+  opacity: 50%;
+}
+
+.white {
+ color: white;
 }
