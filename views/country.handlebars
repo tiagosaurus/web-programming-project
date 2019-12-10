@@ -188,10 +188,10 @@
             <h2 class="section-title">Weather</h2>
 
             <section id="forecast" class="hidden">
-                <h2>5 Day Forecast</h2>
+                <h2 align="center">5 Day Forecast</h2>
 
                 <p id="error-loading-city1" class="error-msg"></p>
-                <table id="results-city1">
+                <table id="results-city1" align="center">
                     <caption id="city1-name"></caption>
                     <tr>
                     <td id="city1-day1-name"></td>
@@ -343,14 +343,15 @@
                     for (const date in forecast) {
                         // Only process the first 5 days
                         if (day <= 5) {
-                        showText(`${cityId}-day${day}-name`, getDayName(date));
-                        showText(`${cityId}-day${day}-high`, Math.round(forecast[date].high) + "&deg;");
-                        showText(`${cityId}-day${day}-low`, Math.round(forecast[date].low) + "&deg;");
-                        showImage(`${cityId}-day${day}-image`, forecast[date].weather);
+                            showText(`${cityId}-day${day}-name`, getDayName(date));
+                            showText(`${cityId}-day${day}-high`, Math.round(forecast[date].high) + "&deg;");
+                            showText(`${cityId}-day${day}-low`, Math.round(forecast[date].low) + "&deg;");
+                            showImage(`${cityId}-day${day}-image`, forecast[date].weather);
                         }
                         day++;
                     }
-                } else {
+                } 
+                else {
                     // Display appropriate error message
                     const errorId = "error-loading-" + cityId;
                     showElement(errorId);
@@ -404,7 +405,7 @@
                         if (temp > forecast[date].high) {
                             forecast[date].high = temp;
                         }
-                        }
+                    }
                     else {
                         // Initialize new forecast
                         const temps = {
@@ -419,6 +420,7 @@
                 });
                 return forecast;
             }
+
             loadWeather();
         }
         getData();
