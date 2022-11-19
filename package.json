@@ -34,6 +34,6 @@
     "postcss-nested": "^4.2.1",
     "postcss-simple-vars": "^5.0.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   }
 }
